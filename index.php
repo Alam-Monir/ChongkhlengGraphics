@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include "includes/header.php";
+include "includes/header.php";
+?>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChongkhlengGraphics</title>
-    <style>
-        .test {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-size: 50px;
-            font-weight: bold;
-        }
-    </style>
-</head>
+<style>
+    .test {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 50px;
+        font-weight: bold;
+    }
+</style>
 
-<body>
-    <div class="test">Coming Soon very soon</div>
-   
-</body>
 
-</html>
+<div class="test">Coming Soon very soon</div>
+<!-- <button class="btn btn-primary">Test button</button> -->
+
+<?php include "includes/footer.php"; ?>
