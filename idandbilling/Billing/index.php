@@ -2,7 +2,7 @@
 include('includes/header.php');
 include('includes/nav.php');
 include('../config/dbcon.php');
-include ('../auth/auth_check_staff.php');
+include('../auth/auth_check_staff.php');
 ?>
 
 <style>
@@ -59,7 +59,6 @@ include ('../auth/auth_check_staff.php');
     .list-group-item:hover {
         background: #f0f0f0;
     }
-    
 </style>
 
 
@@ -68,7 +67,7 @@ include ('../auth/auth_check_staff.php');
 <div class="card position-absolute start-0 bg-body-tertiary h-100 " style="width:35%;">
 
     <div class="card d-flex align-items-center h-100">
-        <h4 class="pt-4">Make An Invoice</h4>
+        <h4 class="pt-4"><i class="bi bi-receipt-cutoff"></i> Make An Invoice</h4>
         <div class="form-floating w-50 mt-4">
             <input type="date" id="invoiceDate" class="form-control mt-3" placeholder="Invoice Date" required>
             <label for="invoiceDate">Invoice Date</label>
@@ -109,18 +108,21 @@ include ('../auth/auth_check_staff.php');
             <label for="deliveryDate">Delivery Date</label>
         </div>
 
-        <div class="d-grid gap-3 d-md-block mt-3 mb-4">
+        <div class="d-grid gap-3 d-md-block mt-3 mb-2">
             <button type="button" class="btn btn-outline-danger">Cancel</button>
-            <button type="button" id="export" class="btn btn-outline-success">Export</button>
+            <button type="button" id="save" class="btn btn-outline-success"><i class="bi bi-floppy"></i> Save</button>
+        </div>
+        <div class="d-grid gap-3 d-md-block mt-1 mb-4">
+            <button type="button" id="export" class="btn btn-outline-primary"><i class="bi bi-download"></i> Download</button>
         </div>
     </div>
 </div>
 
 <!--table invoice-->
 
-<div id="invoice" class="ml-5 bg-body-tertiary position-absolute end-0 h-100"  style="width: 65%; margin-right:5px;">
+<div id="invoice" class="ml-5 bg-body-tertiary position-absolute end-0 h-100" style="width: 65%; margin-right:5px;">
     <div class="container text-center card h-100" style=" background-image: url('image/watermark.png'); background-size: cover; background-position: center 250px; background-size:45%; background-repeat: no-repeat; position:relative;">
-    <img src="./image/watermark.png" style="width: 50px; position:absolute; margin-left:40px;">
+        <img src="./image/watermark.png" style="width: 50px; position:absolute; margin-left:40px;">
         <div class="row ">
             <?php
             $query = "SELECT sellerName, address, email, contact, gstNo FROM sellerInfo LIMIT 1";
@@ -516,62 +518,6 @@ include ('../auth/auth_check_staff.php');
     });
 </script>
 
-<!-- Invoice export function -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-<script>
-    const invoiceCard = document.querySelector('#invoice');
-    const exportButton = document.querySelector('#export');
-
-    function generateUniqueInvoiceNumber() {
-        const timestamp = Date.now().toString(16);
-        const randomPart = Math.floor(Math.random() * 0xfffff).toString(16);
-
-        const uniqueInvoiceNumber = (timestamp + randomPart).slice(0, 16).padStart(16, '0');
-        return uniqueInvoiceNumber;
-    }
-
-    exportButton.addEventListener('click', () => {
-        const uniqueInvoiceNumber = generateUniqueInvoiceNumber();
-
-        const invoiceNumberElement = document.querySelector('.card.w-50');
-        if (invoiceNumberElement) {
-            invoiceNumberElement.innerHTML = `Invoice Number<br>${uniqueInvoiceNumber}`;
-        }
-
-        if (typeof html2canvas !== 'function' || typeof jsPDF !== 'function') {
-            console.error('Required libraries (html2canvas or jsPDF) are not loaded properly.');
-            return;
-        }
-
-        const canvasOptions = {
-            scale: 4
-        };
-
-        html2canvas(invoiceCard, canvasOptions).then((canvas) => {
-            const imgData = canvas.toDataURL('image/jpeg', 1.0);
-
-
-            const pdf = new jsPDF({
-                orientation: 'portrait',
-                unit: 'mm',
-                format: 'a4',
-            });
-
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-            pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
-
-            pdf.save(`invoice${uniqueInvoiceNumber}.pdf`);
-
-            location.reload();
-        }).catch((error) => {
-            console.error('Error while exporting the invoice:', error);
-        });
-    });
-</script>
-
 <!-- Customer Input suggestion function -->
 <script>
     const input = document.getElementById('customerName');
@@ -642,93 +588,148 @@ include ('../auth/auth_check_staff.php');
     });
 </script>
 
-<!-- Saving Invoice -->
+<!-- Invoice Number Creation Script -->
 <script>
-    document.getElementById("export").addEventListener("click", async () => {
-        // Collect form data
-        const invoiceDateInput = document.getElementById("invoiceDate").value;
-        const deliveryDateInput = document.getElementById("deliveryDate").value;
-        const customerName = document.getElementById("customerName").value;
-        const customerAddress = document.getElementById("customerAddress").value;
-        const customerContact = document.getElementById("customerContact").value;
-        const gstPercentage = document.getElementById("gstSelector").value;
+    function generateUniqueInvoiceNumber() {
+        const timestamp = Date.now().toString(16);
+        const randomPart = Math.floor(Math.random() * 0xfffff).toString(16);
 
-        //If today's date field is empty enter current date
-        function getFormattedTodayDatedb() {
-            const today = new Date();
-            const day = String(today.getDate()).padStart(2, '0');
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const year = today.getFullYear();
-            return `${year}/${month}/${day}`;
-        }
-        const formattedToday = getFormattedTodayDatedb();
-        const invoiceDate = invoiceDateInput || formattedToday;
+        const uniqueInvoiceNumber = (timestamp + randomPart).slice(0, 16).padStart(16, '0');
+        return uniqueInvoiceNumber;
+    }
+</script>
 
-        // Validation
-        if (!deliveryDateInput) {
-            alert("Please provide a delivery date.");
-            return;
-        }
-        if (!customerName || !customerAddress || !customerContact) {
-            alert("Please provide complete customer details.");
+<!-- Invoice export function -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script>
+    const invoiceCard = document.querySelector('#invoice');
+    const exportButton = document.querySelector('#export');
+
+    exportButton.addEventListener('click', () => {
+
+        if (typeof html2canvas !== 'function' || typeof jsPDF !== 'function') {
+            console.error('Required libraries (html2canvas or jsPDF) are not loaded properly.');
             return;
         }
 
-        // Generate a unique invoice ID
-        const invoiceId = generateUniqueInvoiceNumber();
-
-        // Get all rows of the table
-        const rows = document.querySelectorAll("table tbody tr");
-        const tableData = [];
-
-        // Loop through each row and extract required data
-        rows.forEach((row) => {
-            const item = row.querySelector("td:nth-child(2)").textContent.trim();
-            const quantity = row.querySelector(".quantity-value").textContent.trim();
-            const unit = row.querySelector(".edit-per").textContent.trim();
-            const rate = row.querySelector(".price-value").textContent.trim();
-
-            tableData.push({
-                itemName: item,
-                quantity: parseInt(quantity, 10),
-                unit: unit,
-                unitPrice: parseFloat(rate),
-            });
-        });
-
-        // Prepare data for the PHP script
-        const invoiceData = {
-            invoiceNumber: invoiceId,
-            invoiceDate: invoiceDate,
-            deliveryDate: deliveryDateInput,
-            customerName: customerName,
-            customerAddress: customerAddress,
-            customerContact: customerContact,
-            gstPercentage: gstPercentage,
-            table: tableData,
+        const canvasOptions = {
+            scale: 4
         };
 
-        try {
-            const response = await fetch("saveInvoice.php", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(invoiceData),
+        const uniqueInvoiceNumber = generateUniqueInvoiceNumber();
+
+        html2canvas(invoiceCard, canvasOptions).then((canvas) => {
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4',
             });
 
-            const result = await response.json();
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-            if (result.success) {
-                alert("Invoice and items saved successfully!");
-                // location.reload();
-            } else {
-                alert(`Failed to save data: ${result.error || "Unknown error"}`);
+            pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight);
+
+            pdf.save(`invoice${uniqueInvoiceNumber}.pdf`);
+
+            location.reload();
+        }).catch((error) => {
+            console.error('Error while exporting the invoice:', error);
+        });
+    });
+</script>
+
+<!-- Saving Invoice -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const exportButton = document.getElementById("export");
+        exportButton.disabled = true;
+
+        document.getElementById("save").addEventListener("click", async () => {
+            // Collect form data
+            const invoiceDateInput = document.getElementById("invoiceDate").value;
+            const deliveryDateInput = document.getElementById("deliveryDate").value;
+            const customerName = document.getElementById("customerName").value;
+            const customerAddress = document.getElementById("customerAddress").value;
+            const customerContact = document.getElementById("customerContact").value;
+            const gstPercentage = document.getElementById("gstSelector").value;
+
+            function getFormattedTodayDatedb() {
+                const today = new Date();
+                return `${today.getFullYear()}/${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}`;
             }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("An error occurred while saving the invoice.");
-        }
+            const invoiceDate = invoiceDateInput || getFormattedTodayDatedb();
+
+            if (!deliveryDateInput) {
+                alert("Please provide a delivery date.");
+                return;
+            }
+            if (!customerName || !customerAddress || !customerContact) {
+                alert("Please provide complete customer details.");
+                return;
+            }
+
+            const invoiceId = generateUniqueInvoiceNumber();
+
+            const invoiceNumberElement = document.querySelector('.card.w-50');
+            if (invoiceNumberElement) {
+                invoiceNumberElement.innerHTML = `Invoice Number<br>${invoiceId}`;
+            }
+
+            const rows = document.querySelectorAll("table tbody tr");
+            const tableData = [];
+
+            rows.forEach((row) => {
+                const item = row.querySelector("td:nth-child(2)").textContent.trim();
+                const quantity = row.querySelector(".quantity-value").textContent.trim();
+                const unit = row.querySelector(".edit-per").textContent.trim();
+                const rate = row.querySelector(".price-value").textContent.trim();
+
+                tableData.push({
+                    itemName: item,
+                    quantity: parseInt(quantity, 10),
+                    unit: unit,
+                    unitPrice: parseFloat(rate),
+                });
+            });
+
+            const invoiceData = {
+                invoiceNumber: invoiceId,
+                invoiceDate: invoiceDate,
+                deliveryDate: deliveryDateInput,
+                customerName: customerName,
+                customerAddress: customerAddress,
+                customerContact: customerContact,
+                gstPercentage: gstPercentage,
+                table: tableData,
+            };
+
+            try {
+                const response = await fetch("saveInvoice.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(invoiceData),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert("Invoice and items saved successfully!");
+                    exportButton.disabled = false; // Enable export button after successful save
+                } else {
+                    alert(`Failed to save data: ${result.error || "Unknown error"}`);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred while saving the invoice.");
+            }
+        });
     });
 </script>
 
