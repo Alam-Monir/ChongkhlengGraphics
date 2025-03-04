@@ -7,8 +7,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Id and Billing</title>
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/idandbilling/assets/css/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="/chongkhlenggraphics/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/chongkhlenggraphics/assets/css/bootstrap-icons.min.css" rel="stylesheet" />
 </head>
 <style>
   .color-text {
@@ -79,8 +79,8 @@
       </button>
   </div>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="/chongkhlenggraphics/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/chongkhlenggraphics/assets/js/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>
