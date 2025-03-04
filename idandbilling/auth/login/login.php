@@ -18,14 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Show success alert and redirect
         echo "<script>
             alert('Successfully logged in!');
-            window.location.href = '" . ($user['isAdmin'] ? "/idandbilling/" : "/idandbilling/") . "';
+            window.location.href = '" . ($user['isAdmin'] ? "/chongkhlenggraphics/idandbilling/" : "/chongkhlenggraphics/idandbilling/") . "';
         </script>";
         exit;
     } else {
         // Show error alert and stay on login page
         echo "<script>
             alert('Invalid email or password.');
-            window.location.href = '/idandbilling/auth/login/';
+            window.location.href = '../login/';
         </script>";
         exit;
     }

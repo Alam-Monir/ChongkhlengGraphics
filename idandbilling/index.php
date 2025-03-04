@@ -13,6 +13,7 @@
 <style>
   .color-text {
     background: linear-gradient(to right, green, black, red, blue, yellow);
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }
@@ -21,7 +22,8 @@
     margin-left: 70vh;
     position: absolute;
   }
-  .container1{
+
+  .container1 {
     background-color: rgb(210, 210, 210);
   }
 </style>
@@ -76,10 +78,6 @@
         Billing <i class="bi bi-receipt-cutoff"></i>
       </button>
   </div>
-
-
-
- 
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/jquery-3.7.1.min.js"></script>

@@ -7,6 +7,6 @@ session_destroy();
 
 echo "<script>
     alert('Successfully logged out.');
-    window.location.href = '/idandbilling/auth/login/';
+    window.location.href = '../auth/login/';
 </script>";
 exit;
