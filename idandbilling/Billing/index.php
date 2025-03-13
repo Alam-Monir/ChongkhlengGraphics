@@ -112,9 +112,9 @@ include('../auth/auth_check_staff.php');
             <button type="button" class="btn btn-outline-danger">Cancel</button>
             <button type="button" id="save" class="btn btn-outline-success"><i class="bi bi-floppy"></i> Save</button>
         </div>
-        <div class="d-grid gap-3 d-md-block mt-1 mb-4">
+        <!-- <div class="d-grid gap-3 d-md-block mt-1 mb-4">
             <button type="button" id="export" class="btn btn-outline-primary"><i class="bi bi-download"></i> Download</button>
-        </div>
+        </div> -->
     </div>
 </div>
 
