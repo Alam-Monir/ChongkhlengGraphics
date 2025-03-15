@@ -93,10 +93,12 @@ if ($invoiceId > 0) {
     }
 </style>
 
+<button type="button" class="btn btn-outline-primary p-2 m-2" id="downloadInvoice"><i class="bi bi-download"></i> Download</button>
+
 <!-- Edit Invoice Form -->
-<div class="card position-absolute start-0 bg-body-tertiary h-100" style="width:35%;">
+<div class="card position-absolute start-0 bg-body-tertiary h-100" style="display: none;">
     <div class="card d-flex align-items-center h-100">
-        <h4 class="pt-4"><i class="bi bi-receipt-cutoff"></i> Edit Invoice</h4>
+        <h4 class="pt-4">Edit Invoice</h4>
         <!-- Invoice form inputs -->
         <div class="form-floating w-50 mt-4">
             <input type="date" id="invoiceDate" class="form-control mt-3" placeholder="Invoice Date">
@@ -146,15 +148,14 @@ if ($invoiceId > 0) {
         </div>
         <div class="d-grid gap-3 d-md-block mt-3 mb-2">
             <button type="button" class="btn btn-outline-danger" id="cancelInvoice">Cancel</button>
-            <button type="button" class="btn btn-outline-success" id="saveInvoice"><i class="bi bi-floppy"></i> Save</button>
+            <button type="button" class="btn btn-outline-success" id="saveInvoice">Save</button>
         </div>
-        <a href="download.php?invoiceId=<?= $invoiceId; ?>" class="btn btn-outline-primary"><i class="bi bi-download"></i> Download</a>
     </div>
 </div>
 
 
 <!-- Invoice Table -->
-<div id="invoice" class="ml-5 bg-img position-absolute end-0 h-100" style="width: 65%; margin-right:5px;">
+<div id="invoice" class="ml-5 bg-img position-absolute end-0 h-100" style="width: 100%; margin-right:5px;">
     <div class="container text-center card h-100" style=" background-image: url('../../image/watermark.png'); background-size: cover; background-position: center; background-size:50%; background-repeat: no-repeat; position:relative;">
         <img src="../../image/watermark.png" style="width: 50px; position:absolute; margin-left:40px;">
         <div class="row">
@@ -1009,6 +1010,36 @@ if ($invoiceId > 0) {
 
             updateInvoiceDisplay();
         });
+    });
+</script>
+
+
+<script>
+    function printInvoice() {
+        let invoiceContent = document.getElementById("invoice").outerHTML;
+        let printWindow = window.open("", "_blank");
+
+        // Add Bootstrap CSS explicitly in the print window
+        let bootstrapCDN = `<link rel="stylesheet" href="/chongkhlenggraphics/assets/css/bootstrap.min.css">`;
+
+        printWindow.document.write(`
+            <html>
+            <head>
+                <title>Invoice</title>
+                ${bootstrapCDN}
+            </head>
+            <body>${invoiceContent}</body>
+            </html>
+        `);
+
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+        printWindow.close();
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector("#downloadInvoice").addEventListener("click", printInvoice);
     });
 </script>
 
