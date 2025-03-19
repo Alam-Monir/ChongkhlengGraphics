@@ -1,15 +1,8 @@
-<?php include "auth/auth_check_staff.php"; ?>
+<?php include "auth/auth_check_staff.php";
+$title = 'Id and Billing';
+include "../includes/header.php";
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Id and Billing</title>
-  <link href="/chongkhlenggraphics/assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/chongkhlenggraphics/assets/css/bootstrap-icons.min.css" rel="stylesheet" />
-</head>
 <style>
   .color-text {
     background: linear-gradient(to right, green, black, red, blue, yellow);

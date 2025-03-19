@@ -1,5 +1,6 @@
 <?php
-include('../includes/header.php');
+$title = 'All Invoices';
+include('../../../includes/header.php');
 include('../includes/nav.php');
 include('../../config/dbcon.php');
 include ('../../auth/auth_check_admin.php');
@@ -160,4 +161,4 @@ include ('../../auth/auth_check_admin.php');
     });
 </script>
 
-<?php include('../includes/footer.php'); ?>
+<?php include('../../../includes/footer.php'); ?>

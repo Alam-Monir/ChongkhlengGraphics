@@ -1,5 +1,6 @@
 <?php
-include('includes/header.php');
+$title = 'Billing';
+include('../../includes/header.php');
 include('includes/nav.php');
 include('../config/dbcon.php');
 include('../auth/auth_check_staff.php');
@@ -733,4 +734,4 @@ include('../auth/auth_check_staff.php');
     });
 </script>
 
-<?php include('includes/footer.php') ?>
+<?php include('../../includes/footer.php') ?>

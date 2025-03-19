@@ -1,5 +1,6 @@
 <?php
-include('../includes/header.php');
+$title = 'Log In';
+include('../../../includes/header.php');
 include('../../config/dbcon.php');
 ?>
 
@@ -47,4 +48,4 @@ include('../../config/dbcon.php');
     <button type="button" class="btn btn-outline-success" style="margin-left: 200px;">Create Account</button>
   </form>
 </div> -->
-<?php include('../includes/footer.php'); ?>
+<?php include('../../../includes/footer.php'); ?>

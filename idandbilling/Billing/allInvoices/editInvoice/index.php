@@ -1,5 +1,6 @@
 <?php
-include('../../includes/header.php');
+$title = 'Edit Invoice';
+include('../../../../includes/header.php');
 include('../../includes/nav.php');
 include('../../../config/dbcon.php');
 include('../../../auth/auth_check_admin.php');
@@ -1013,4 +1014,4 @@ if ($invoiceId > 0) {
 </script>
 
 
-<?php include('../../includes/footer.php'); ?>
+<?php include('../../../../includes/footer.php'); ?>

@@ -1,5 +1,6 @@
 <?php
-include("../includes/header.php");
+$title = 'Create Id Layout';
+include("../../../includes/header.php");
 include("../includes/nav.php");
 ?>
 
@@ -270,4 +271,4 @@ include("../includes/nav.php");
 </script>
 
 
-<?php include("../includes/footer.php") ?>
+<?php include("../../../includes/footer.php") ?>

@@ -1,5 +1,6 @@
 <?php
-include("../includes/header.php");
+$title = 'Edit Id Layout';
+include('../../../includes/header.php');
 include("../includes/nav.php");
 ?>
 <?php
@@ -195,4 +196,4 @@ $layoutName = htmlspecialchars($row['layoutName']);
     });
 </script>
 
-<?php include("../includes/footer.php") ?>
+<?php include("../../../includes/footer.php") ?>

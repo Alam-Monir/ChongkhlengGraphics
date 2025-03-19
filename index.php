@@ -1,6 +1,5 @@
 <?php
 include "includes/header.php";
-include "includes/header.php";
 ?>
 
 <style>
@@ -56,7 +55,7 @@ include "includes/header.php";
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 20%;
     height: auto;
-    
+
   }
 
   .image-container-1 {

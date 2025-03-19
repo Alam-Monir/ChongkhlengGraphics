@@ -1,4 +1,7 @@
-<?php include('../../includes/header.php'); ?>
+<?php 
+$title = 'Log In';
+include('../../includes/header.php'); 
+?>
 
 <div class=" vh-100">
   <div class="row g-0">
