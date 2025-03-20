@@ -1,5 +1,5 @@
  <!-- Footer Section -->
- <footer class="bg-dark text-white text-center py-3 mt-5">
+ <footer class="bg-dark text-white text-center py-3" style="margin-top: 10%;">
     <div class="container">
       <p>&copy; chongkhlenggraphics 2025. All Rights Reserved.</p>
       <p>
@@ -19,8 +19,6 @@
     </div>
   </footer>
 
-
-<!-- Reusable Footer -->
 <script src="/chongkhlenggraphics/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/chongkhlenggraphics/assets/js/jquery-3.7.1.min.js"></script>
 </body>
