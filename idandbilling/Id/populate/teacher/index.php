@@ -1,5 +1,6 @@
 <?php
-include("../../includes/header.php");
+$title = 'Fill Teacher Details';
+include("../../../../includes/header.php");
 include("../../includes/nav.php");
 ?>
 <?php
@@ -242,4 +243,4 @@ $layoutName = htmlspecialchars($row['layoutName']);
 
 
 
-<?php include("../../includes/footer.php") ?>
+<?php include("../../../../includes/footer.php") ?>

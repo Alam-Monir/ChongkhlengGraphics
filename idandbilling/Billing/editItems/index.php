@@ -1,5 +1,6 @@
 <?php
-include('../includes/header.php');
+$title = 'Items';
+include('../../../includes/header.php');
 include('../includes/nav.php');
 include('../../config/dbcon.php');
 ?>
@@ -261,4 +262,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteItem'])) {
 
 <script src="script.js"></script>
 
-<?php include('../includes/footer.php') ?>
+<?php include('../../../includes/footer.php') ?>

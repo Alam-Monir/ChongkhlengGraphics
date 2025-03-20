@@ -6,15 +6,15 @@
         <a href="#" class="text-white text-decoration-none">Privacy Policy</a> |
         <a href="#" class="text-white text-decoration-none">Terms of Service</a>
       </p>
-      <p>Conected With Us:</p>
+      <p>Connect With Us:</p>
       <a href="#" class="text-white me-3">
         <i class="bi bi-facebook"></i> Facebook
       </a>
       <a href="#" class="text-white me-3">
-        <i class="bi bi-instagram"></i> instagram
+        <i class="bi bi-instagram"></i> Instagram
       </a>
       <a href="#" class="text-white">
-        <i class="bi bi-youtube"></i> youtube
+        <i class="bi bi-youtube"></i> Youtube
       </a>
     </div>
   </footer>

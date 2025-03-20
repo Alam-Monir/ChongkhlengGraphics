@@ -1,6 +1,9 @@
-<?php include('../includes/header.php') ?>
-<?php include('../includes/nav.php') ?>
-<?php include ('../../auth/auth_check_admin.php'); ?>
+<?php 
+$title = 'Seller Info';
+include('../../../includes/header.php');
+include('../includes/nav.php');
+include('../../auth/auth_check_admin.php');
+?>
 
 
 <div class="d-flex justify-content-center mt-3">
@@ -132,4 +135,4 @@
   });
 </script>
 
-<?php include('../includes/footer.php') ?>
+<?php include('../../../includes/footer.php') ?>

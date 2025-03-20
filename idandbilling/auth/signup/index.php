@@ -1,5 +1,6 @@
 <?php
-include('../includes/header.php');
+$title = 'Sign Up';
+include('../../../includes/header.php');
 include('../../config/dbcon.php');
 ?>
 
@@ -77,4 +78,4 @@ include('../../config/dbcon.php');
 </form>
 </div>
 
-<?php include('../includes/footer.php'); ?>
+<?php include('../../../includes/footer.php'); ?>

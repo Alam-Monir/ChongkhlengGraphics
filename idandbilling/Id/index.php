@@ -1,5 +1,6 @@
 <?php
-include("includes/header.php");
+$title = 'ID';
+include("../../includes/header.php");
 include("includes/nav.php");
 include("../config/dbcon.php");
 include ('../auth/auth_check_staff.php');
@@ -281,4 +282,4 @@ function prepareImageUrl($imageUrl)
 
 
 
-<?php include("includes/footer.php"); ?>
+<?php include("../../includes/footer.php"); ?>
