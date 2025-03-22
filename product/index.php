@@ -8,7 +8,7 @@ include "../includes/header.php";
         color: black;
     }
     .back-icon{
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     .rounded{
         width: 200px; 
@@ -27,13 +27,13 @@ include "../includes/header.php";
 <!-- all product page -->
 
 <!-- back button -->
-<div class="d-flex flex-row flex-wrap" style="background-color:  rgb(216, 196, 182);">
+<div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(250, 250, 250);">
 <button class="btn">
     <a href="../index.php">
   <i class="bi bi-arrow-left back-icon"></i> 
 </a>
 </button>
-<h3 class="mt-3 mx-3">All Product</h3>
+<h5 class="mt-3 mx-3">All Product</h5>
 </div>
 
 <!-- product page -->
@@ -57,6 +57,10 @@ include "../includes/header.php";
   <a href="">
     <img src="../auth/img/shopping (7).webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Print Cup</h4>
+  </a>
+  <a href="">
+    <img src="../auth/img/shopping.webp" class="rounded" alt="Shopping Image">
+    <h4 class="text-center fs-6">Extra Product</h4>
   </a>
   <a href="">
     <img src="../auth/img/shopping.webp" class="rounded" alt="Shopping Image">

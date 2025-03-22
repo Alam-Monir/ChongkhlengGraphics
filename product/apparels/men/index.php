@@ -9,7 +9,7 @@ include "../../../includes/header.php";
   }
 
   .back-icon {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .rounded {
@@ -56,19 +56,19 @@ include "../../../includes/header.php";
 </style>
 
 <!-- back button -->
-<div class="d-flex flex-row flex-wrap" style="background-color:  rgb(216, 196, 182);">
+<div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(235, 235, 235);">
   <button class="btn">
-    <a href="../index.php">
+    <a href="../">
       <i class="bi bi-arrow-left back-icon"></i>
     </a>
   </button>
-  <h3 class="mt-3 mx-3">Men's T shirt</h3>
+  <h5 class="mt-3 mx-3">Men's T shirt</h5>
 </div>
 
 
 <!-- mens product -->
 <div class="d-flex flex-wrap my-3 justify-content-around">
-  <a href="./../men/productPage/index.php" class="product-item">
+  <a href="productPage/" class="product-item">
     <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
     <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
   </a>

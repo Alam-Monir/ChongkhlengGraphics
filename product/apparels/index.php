@@ -9,7 +9,7 @@ include "../../includes/header.php";
   }
 
   .back-icon {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .rounded {
@@ -44,13 +44,13 @@ include "../../includes/header.php";
 
 
 <!-- back button -->
-<div class="d-flex flex-row flex-wrap" style="background-color:  rgb(216, 196, 182);">
+<div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(235, 235, 235);">
   <button class="btn">
     <a href="../index.php">
       <i class="bi bi-arrow-left back-icon"></i>
     </a>
   </button>
-  <h3 class="mt-3 mx-3">Fashion</h3>
+  <h5 class="mt-3 mx-3">Fashion</h5>
 </div>
 
 <!-- product section -->
