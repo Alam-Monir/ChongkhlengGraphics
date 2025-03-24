@@ -1,6 +1,6 @@
 <?php
 include "includes/header.php";
-include "includes/header.php";
+include "includes/nav.php";
 ?>
 
 <style>
@@ -14,8 +14,8 @@ include "includes/header.php";
 
   .justify-content-evenly img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 65px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
   .carousel-inner img {
@@ -136,7 +136,11 @@ include "includes/header.php";
       width: 40%;
       height: 220px;
     }
-
+    .justify-content-evenly img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 45px;
+    height: 45px;
+  }
 
   }
 </style>
@@ -199,8 +203,8 @@ include "includes/header.php";
 
 <!--brands-list-->
 <div class="d-flex flex justify-content-evenly mt-4 mb-5 p-3 bg-body">
-  <a href="product/index.php">
-    <img src="./auth/img/HD-wallpaper-adidas-brand-logo-originals-sport.jpg" class="rounded-circle" style="width:65px; height:60px;">
+  <a href="product/">
+    <img src="./auth/img/all.png" class="rounded-circle">
   </a>
   <a href="#">
     <img src="./auth/img/hm.png" class="rounded-circle">
@@ -210,6 +214,9 @@ include "includes/header.php";
   </a>
   <a href="#">
     <img src="./auth/img/download.png" class="rounded-circle">
+  </a>
+  <a href="#">
+    <img src="./auth/img/hm.png" class="rounded-circle">
   </a>
   <a href="#">
     <img src="./auth/img/hm.png" class="rounded-circle">
@@ -257,9 +264,9 @@ include "includes/header.php";
       <img src="./auth/img/1.jpeg" class="card-img-top w-100 h-100" alt="...">
     </a>
     <div class="card-body">
-      <div class="d-flex flex-row mb-1 fw-bold">
-        <div class="p-1 flex-grow-1">Price</div>
-        <div class="p-1">1000</div>
+      <div class="d-flex flex-row  fw-bold">
+        <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+        <!-- <div class="p-1">1000</div> -->
       </div>
     </div>
   </div>
@@ -270,8 +277,7 @@ include "includes/header.php";
     </a>
     <div class="card-body">
       <div class="d-flex flex-row mb-1 fw-bold">
-        <div class="p-1 flex-grow-1">Price</div>
-        <div class="p-1">1000</div>
+      <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
       </div>
     </div>
   </div>
@@ -282,8 +288,7 @@ include "includes/header.php";
     </a>
     <div class="card-body">
       <div class="d-flex flex-row mb-1 fw-bold">
-        <div class="p-1 flex-grow-1">Price</div>
-        <div class="p-1">1000</div>
+      <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
       </div>
     </div>
   </div>
@@ -294,8 +299,7 @@ include "includes/header.php";
     </a>
     <div class="card-body">
       <div class="d-flex flex-row mb-1 fw-bold">
-        <div class="p-1 flex-grow-1">Price</div>
-        <div class="p-1">1000</div>
+      <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
       </div>
     </div>
   </div>
