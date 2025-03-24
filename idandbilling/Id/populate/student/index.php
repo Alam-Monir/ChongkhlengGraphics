@@ -74,225 +74,235 @@ $layoutName = htmlspecialchars($row['layoutName']);
         </div>
     </div>
 
-    <!-- Edit Modal -->
-    <div
-        class="card mx-auto d-flex flex-column"
-        style="width: 400px; height: 660px; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; overflow-y: auto; background-color: #ffffff;">
-        <input type="hidden" name="layoutId" value="<?= $id ?>">
-        <div class="section mb-2">
-            <h6>Upload Excel File (if available):</h6>
-            <input type="file" id="excelFile" name="excelFile" accept=".xlsx, .xls" alt="excelFile">
-        </div>
-        <div class="section mb-2">
-            <h6>Upload Student Image:</h6>
-            <input type="file" id="profileImgInput" name="profileImg" accept="image/*" alt="profileImg" required>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="text" id="StudentNameInput" class="form-control" name="StudentName" placeholder="" required>
-            <label for="StudentNameInput">Enter Student Name</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="text" id="StudentClassInput" class="form-control" name="StudentClass" placeholder="" required>
-            <label for="StudentClassInput">Enter Class</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input id="dobInput" class="form-control" type="date" />
-            <label for="dobInput">Select Date Of Birth</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="text" id="bGroupInput" class="form-control" name="bGroup" placeholder="" required>
-            <label for="bGroupInput">Enter Blood Group</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="text" id="fatherInput" class="form-control" name="father" placeholder="" required>
-            <label for="fatherInput">Enter Father's Name</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="text" id="addInput" class="form-control" name="add" placeholder="" required>
-            <label for="addInput">Enter Address</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="text" id="phNoInput" class="form-control" name="phNo" placeholder="" required>
-            <label for="phNoInput">Enter Contact Number</label>
-        </div>
-        <div class="form-floating mb-2">
-            <input type="date" id="validity" class="form-control" name="validity" placeholder="" required>
-            <label for="validity">Valid Upto</label>
-        </div>
+    <!-- Populate Method Select -->
+    <div class="justify-content-center mx-auto d-flex flex-column">
+        <button type="button" class="btn btn-outline-primary mb-4 btn-lg" data-bs-toggle="modal" data-bs-target="#excelModal">Upload Excel</button>
+        <button type="button" class="btn btn-outline-primary mt-4 btn-lg" data-bs-toggle="modal" data-bs-target="#singleModal">Make Single Id</button>
+    </div>
+</div>
 
-        <div class="d-flex justify-content-evenly">
-            <button type="button" class="btn btn-outline-danger mt-2" id="cancelButton">Cancel</button>
-            <button class="btn btn-outline-primary mt-2" id="exportButton">Export</button>
+<!-- Excel Modal -->
+<div class="modal fade" id="excelModal" tabindex="-1" aria-labelledby="excelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="excelModalLabel">Upload Excel</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="layoutId" value="<?= $id ?>">
+                <div class="section mb-2">
+                    <h6>Upload Excel File :</h6>
+                    <input type="file" id="excelFile" name="excelFile" accept=".xlsx, .xls" alt="excelFile">
+                </div>
+                <div class="section mb-2">
+                    <h6>Upload Zip File (Containing Images):</h6>
+                    <input type="file" id="zipFile" name="zipFile" accept=".zip">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="cancelButton">Close</button>
+                <button type="button" class="btn btn-outline-success" id="excelExportButton">Export</button>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- Single Id Modal -->
+<div class="modal fade" id="singleModal" tabindex="-1" aria-labelledby="excelModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="excelModalLabel">Enter Student Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="layoutId" value="<?= $id ?>">
+                <div class="section mb-2">
+                    <h6>Upload Student Image:</h6>
+                    <input type="file" id="profileImgInput" name="profileImg" accept="image/*" alt="profileImg" required>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" id="StudentNameInput" class="form-control" name="StudentName" placeholder="" required>
+                    <label for="StudentNameInput">Enter Student Name</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" id="StudentClassInput" class="form-control" name="StudentClass" placeholder="" required>
+                    <label for="StudentClassInput">Enter Class</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input id="dobInput" class="form-control" type="date" />
+                    <label for="dobInput">Select Date Of Birth</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" id="bGroupInput" class="form-control" name="bGroup" placeholder="" required>
+                    <label for="bGroupInput">Enter Blood Group</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" id="fatherInput" class="form-control" name="father" placeholder="" required>
+                    <label for="fatherInput">Enter Father's Name</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" id="addInput" class="form-control" name="add" placeholder="" required>
+                    <label for="addInput">Enter Address</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" id="phNoInput" class="form-control" name="phNo" placeholder="" required>
+                    <label for="phNoInput">Enter Contact Number</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="date" id="validity" class="form-control" name="validity" placeholder="" required>
+                    <label for="validity">Valid Upto</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="cancelButton">Close</button>
+                <button type="button" class="btn btn-outline-success" id="singleExportButton">Export</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<!-- single upload script -->
+<script>
+    document.getElementById("singleExportButton").addEventListener("click", function() {
+        // Get input values
+        let studentName = document.getElementById("StudentNameInput").value;
+        let studentClass = document.getElementById("StudentClassInput").value;
+        let dob = formatDate(document.getElementById("dobInput").value);
+        let bloodGroup = document.getElementById("bGroupInput").value;
+        let fatherName = document.getElementById("fatherInput").value;
+        let address = document.getElementById("addInput").value;
+        let contact = document.getElementById("phNoInput").value;
+        let validity = formatDate(document.getElementById("validity").value);
+
+        // Set values to the card
+        document.getElementById("StudentNameCard").textContent = studentName;
+        document.getElementById("StudentClassCard").textContent = "Class: " + studentClass;
+        document.getElementById("dobCard").textContent = "Date of Birth: " + dob;
+        document.getElementById("bGroupCard").textContent = "Blood Group: " + bloodGroup;
+        document.getElementById("fatherCard").textContent = "Father's Name: " + fatherName;
+        document.getElementById("addCard").textContent = "Address: " + address;
+        document.getElementById("phNoCard").textContent = "Contact: " + contact;
+        document.getElementById("validUpto").textContent = "Valid Upto: " + validity;
+
+        // Handle Image Upload
+        let imgInput = document.getElementById("profileImgInput");
+        let cardImg = document.getElementById("profileImgCard");
+
+        if (imgInput.files && imgInput.files[0]) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                cardImg.src = e.target.result;
+            };
+            reader.readAsDataURL(imgInput.files[0]);
+        }
+
+        // Delay capture to ensure updates
+        setTimeout(downloadCardAsImage, 500);
+    });
+
+    // Function to format date as DD/MM/YYYY
+    function formatDate(dateString) {
+        if (!dateString) return "";
+        let date = new Date(dateString);
+        let day = String(date.getDate()).padStart(2, '0');
+        let month = String(date.getMonth() + 1).padStart(2, '0');
+        let year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
+
+    // Function to download the card as an image
+    function downloadCardAsImage() {
+        let card = document.getElementById("cardLayout");
+
+        html2canvas(card, {
+            scale: 2
+        }).then(canvas => {
+            let image = canvas.toDataURL("image/jpeg", 1.0);
+            let link = document.createElement("a");
+            link.href = image;
+            link.download = "StudentCard.jpg";
+            link.click();
+        });
+    }
+</script>
+
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Export Button Logic
-        const exportButton = document.getElementById('exportButton');
-        const excelFile = document.getElementById('excelFile');
-        const profileImgCard = document.getElementById('profileImgCard');
-        const defaultImgPath = '../../img/';
+    document.getElementById("excelExportButton").addEventListener("click", function() {
+        let formData = new FormData();
+        formData.append("excelFile", document.getElementById("excelFile").files[0]);
+        formData.append("zipFile", document.getElementById("zipFile").files[0]);
 
-        if (exportButton) {
-            exportButton.addEventListener('click', () => {
-                if (!excelFile.files.length) {
-                    alert("Please upload an Excel file.");
-                    return;
+        fetch("upload.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text()) // Read as text first
+            .then(text => {
+                try {
+                    let data = JSON.parse(text); // Try to parse JSON
+                    processStudents(data);
+                } catch (error) {
+                    console.error("JSON Parse Error:", error, "Response:", text);
                 }
+            })
+            .catch(error => console.error("Fetch Error:", error));
+    });
 
-                const reader = new FileReader();
-                reader.onload = function(e) {sheet.forEach((row, index) => {
-                        // Populate card fields from Excel data
-                        document.getElementById('StudentNameCard').textContent = row.StudentName || '';
-                        document.getElementById('StudentClassCard').textContent = row.Class || '';
-                        document.getElementById('dobCard').textContent = "Date of Birth: " + (row.DOB || '');
-                        document.getElementById('bGroupCard').textContent = "Blood Group: " + (row.BloodGroup || '');
-                        document.getElementById('fatherCard').textContent = "Father's Name: " + (row.Father || '');
-                        document.getElementById('addCard').textContent = "Address: " + (row.Address || '');
-                        document.getElementById('phNoCard').textContent = "Contact: " + (row.Contact || '');
-                        document.getElementById('validUpto').textContent = "Valid Upto: " + (row.ValidUpto || '');
 
-                        // Set profile image from ImageName column  
-                        const imageName = row.ImageName || '';
-                        profileImgCard.src = imageName ? `${defaultImgPath}${imageName}` : '';
+    function processStudents(students) {
+        let index = 0;
 
-                        // Generate and download card image
-                        const cardLayout = document.getElementById('cardLayout');
-                        html2canvas(cardLayout).then(canvas => {
-                            const link = document.createElement('a');
-                            link.download = `Student_ID_${index + 1}.jpeg`;
-                            link.href = canvas.toDataURL("image/jpeg", 0.8);
-                            link.click();
-                        });
-                    });
-                    const data = new Uint8Array(e.target.result);
-                    const workbook = XLSX.read(data, {
-                        type: 'array'
-                    });
-                    const sheetName = workbook.SheetNames[0];
-                    const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+        function renderNext() {
+            if (index >= students.length) return;
+            let student = students[index];
 
-                    
-                };
-                reader.readAsArrayBuffer(excelFile.files[0]);
-            });
+            // Populate card
+            document.getElementById("StudentNameCard").textContent = student.name;
+            document.getElementById("StudentClassCard").textContent = "Class: " + student.class;
+            document.getElementById("dobCard").textContent = "Date of Birth: " + student.dob;
+            document.getElementById("bGroupCard").textContent = "Blood Group: " + student.bloodGroup;
+            document.getElementById("fatherCard").textContent = "Father's Name: " + student.father;
+            document.getElementById("addCard").textContent = "Address: " + student.address;
+            document.getElementById("phNoCard").textContent = "Contact: " + student.contact;
+            document.getElementById("validUpto").textContent = "Valid Upto: " + student.validity;
+            document.getElementById("profileImgCard").src = student.image;
+
+            // Delay before capturing the image
+            setTimeout(() => {
+                downloadCardAsImage(student.name, renderNext);
+                index++;
+            }, 500);
         }
 
-        // Real-time Profile Image Upload
-        const profileImgInput = document.getElementById('profileImgInput');
-        if (profileImgInput) {
-            profileImgInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        profileImgCard.src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        }
+        renderNext();
+    }
 
-        // Real-time Input to Card Mapping
-        const inputMappings = {
-            StudentName: {
-                input: document.getElementById('StudentNameInput'),
-                cardElement: document.getElementById('StudentNameCard'),
-            },
-            StudentClass: {
-                input: document.getElementById('StudentClassInput'),
-                cardElement: document.getElementById('StudentClassCard'),
-            },
-            dob: {
-                input: document.getElementById('dobInput'),
-                cardElement: document.getElementById('dobCard'),
-                label: 'Date of Birth: ',
-                format: (value) => {
-                    const date = new Date(value);
-                    if (!isNaN(date)) {
-                        const day = String(date.getDate()).padStart(2, '0');
-                        const month = String(date.getMonth() + 1).padStart(2, '0');
-                        const year = date.getFullYear();
-                        return `${day}-${month}-${year}`;
-                    }
-                    return value;
-                },
-            },
-            bGroup: {
-                input: document.getElementById('bGroupInput'),
-                cardElement: document.getElementById('bGroupCard'),
-                label: 'Blood Group: ',
-            },
-            father: {
-                input: document.getElementById('fatherInput'),
-                cardElement: document.getElementById('fatherCard'),
-                label: "Father's Name: ",
-            },
-            add: {
-                input: document.getElementById('addInput'),
-                cardElement: document.getElementById('addCard'),
-                label: 'Address: ',
-            },
-            phNo: {
-                input: document.getElementById('phNoInput'),
-                cardElement: document.getElementById('phNoCard'),
-                label: 'Contact: ',
-            },
-            validUpto: {
-                input: document.getElementById('validity'),
-                cardElement: document.getElementById('validUpto'),
-                label: 'Valid Upto: ',
-                // format: (value) => {
-                //     const date = new Date(value);
-                //     if (!isNaN(date)) {
-                //         const day = String(date.getDate()).padStart(2, '0');
-                //         const month = String(date.getMonth() + 1).padStart(2, '0');
-                //         const year = date.getFullYear();
-                //         return `${day}-${month}-${year}`;
-                //     }
-                //     return value;
-                // },
-            },
-        };
+    // Function to capture & download card
+    function downloadCardAsImage(filename, callback) {
+        let card = document.getElementById("cardLayout");
 
-        // Update card fields dynamically
-        Object.values(inputMappings).forEach(({
-            input,
-            cardElement,
-            label,
-            format
-        }) => {
-            if (input) {
-                input.addEventListener('input', () => {
-                    const value = input.value;
-                    cardElement.textContent = (label || '') + (format ? format(value) : value);
-                });
-            }
+        html2canvas(card, {
+            scale: 2
+        }).then(canvas => {
+            let image = canvas.toDataURL("image/jpeg", 1.0);
+            let link = document.createElement("a");
+            link.href = image;
+            link.download = filename + ".jpg";
+            link.click();
+
+            setTimeout(callback, 1000); // Process next student after saving
         });
+    }
+</script>
 
-        // Cancel Button Logic
-        const cancelButton = document.getElementById('cancelButton');
-        if (cancelButton) {
-            cancelButton.addEventListener('click', () => {
-                Object.values(inputMappings).forEach(({
-                    input,
-                    cardElement,
-                    label
-                }) => {
-                    if (input) input.value = '';
-                    if (cardElement) cardElement.textContent = label || '';
-                });
-
-                // Reset profile image
-                profileImgCard.src = '';
-            });
-        }
+<script>
+    window.addEventListener('load', function() {
+        fetch('cleanup.php').catch(error => {});
     });
 </script>
 

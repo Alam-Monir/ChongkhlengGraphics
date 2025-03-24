@@ -1,0 +1,17 @@
+{
+    "name": "kyami/chongkhleng-graphics",
+    "autoload": {
+        "psr-4": {
+            "Kyami\\ChongkhlengGraphics\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alam-Monir",
+            "email": "monirrza0641@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.1"
+    }
+}
