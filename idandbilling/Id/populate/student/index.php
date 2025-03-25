@@ -164,8 +164,9 @@ $layoutName = htmlspecialchars($row['layoutName']);
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<!-- single upload script -->
+<!-- Single Upload script -->
 <script>
     document.getElementById("singleExportButton").addEventListener("click", function() {
         // Get input values
@@ -230,7 +231,7 @@ $layoutName = htmlspecialchars($row['layoutName']);
     }
 </script>
 
-
+<!-- Excel Upload script -->
 <script>
     document.getElementById("excelExportButton").addEventListener("click", function() {
         let formData = new FormData();
@@ -241,11 +242,11 @@ $layoutName = htmlspecialchars($row['layoutName']);
                 method: "POST",
                 body: formData
             })
-            .then(response => response.text()) // Read as text first
+            .then(response => response.text())
             .then(text => {
                 try {
-                    let data = JSON.parse(text); // Try to parse JSON
-                    processStudents(data);
+                    let data = JSON.parse(text);
+                    generatePDF(data);
                 } catch (error) {
                     console.error("JSON Parse Error:", error, "Response:", text);
                 }
@@ -253,15 +254,53 @@ $layoutName = htmlspecialchars($row['layoutName']);
             .catch(error => console.error("Fetch Error:", error));
     });
 
+    async function generatePDF(students) {
+        const {
+            jsPDF
+        } = window.jspdf;
 
-    function processStudents(students) {
-        let index = 0;
+        const originalWidth = 868;
+        const originalHeight = 1000;
+        const cardAspectRatio = originalWidth / originalHeight;
 
-        function renderNext() {
-            if (index >= students.length) return;
-            let student = students[index];
+        const pdfPageWidth = 794;
+        const pdfPageHeight = 1123;
 
-            // Populate card
+        const maxCardWidth = pdfPageWidth - 40;
+        const maxCardHeight = pdfPageHeight - 40;
+
+        const widthScale = maxCardWidth / originalWidth;
+        const heightScale = maxCardHeight / originalHeight;
+        const scaleFactor = Math.min(widthScale, heightScale);
+
+        const cardWidth = originalWidth * scaleFactor;
+        const cardHeight = originalHeight * scaleFactor;
+
+        const x = (pdfPageWidth - cardWidth) / 2;
+        const y = (pdfPageHeight - cardHeight) / 2;
+
+        let pdf = new jsPDF({
+            orientation: "portrait",
+            unit: "px",
+            format: [pdfPageWidth, pdfPageHeight]
+        });
+
+        for (let student of students) {
+            await fillCard(student);
+            let imgData = await captureCard();
+
+            pdf.addImage(imgData, 'JPEG', x, y, cardWidth, cardHeight);
+
+            if (students.indexOf(student) < students.length - 1) {
+                pdf.addPage();
+            }
+        }
+
+        pdf.save("Student_ID_Cards.pdf");
+    }
+
+    function fillCard(student) {
+        return new Promise(resolve => {
             document.getElementById("StudentNameCard").textContent = student.name;
             document.getElementById("StudentClassCard").textContent = "Class: " + student.class;
             document.getElementById("dobCard").textContent = "Date of Birth: " + student.dob;
@@ -272,34 +311,23 @@ $layoutName = htmlspecialchars($row['layoutName']);
             document.getElementById("validUpto").textContent = "Valid Upto: " + student.validity;
             document.getElementById("profileImgCard").src = student.image;
 
-            // Delay before capturing the image
-            setTimeout(() => {
-                downloadCardAsImage(student.name, renderNext);
-                index++;
-            }, 500);
-        }
-
-        renderNext();
+            setTimeout(() => resolve(), 300);
+        });
     }
 
-    // Function to capture & download card
-    function downloadCardAsImage(filename, callback) {
-        let card = document.getElementById("cardLayout");
-
-        html2canvas(card, {
-            scale: 2
-        }).then(canvas => {
-            let image = canvas.toDataURL("image/jpeg", 1.0);
-            let link = document.createElement("a");
-            link.href = image;
-            link.download = filename + ".jpg";
-            link.click();
-
-            setTimeout(callback, 1000); // Process next student after saving
+    function captureCard() {
+        return new Promise(resolve => {
+            html2canvas(document.getElementById("cardLayout"), {
+                    scale: 3
+                })
+                .then(canvas => {
+                    resolve(canvas.toDataURL("image/jpeg", 1.0));
+                });
         });
     }
 </script>
 
+<!-- Delete Temporary files on reload -->
 <script>
     window.addEventListener('load', function() {
         fetch('cleanup.php').catch(error => {});
