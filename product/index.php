@@ -15,6 +15,18 @@ include "../includes/header.php";
         height:300px;
         object-fit: cover;
     }
+    .product-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .product-item:hover {
+    transform: scale(1.05);
+  }
+
+  .product-item img {
+    transition: transform 0.3s ease;
+  }
     @media (max-width: 991px) {
         .rounded{
         width: 100px; 
@@ -30,7 +42,7 @@ include "../includes/header.php";
 <div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(250, 250, 250);">
 <button class="btn">
     <a href="../index.php">
-  <i class="bi bi-arrow-left back-icon"></i> 
+  <i class="bi bi-chevron-left"></i> 
 </a>
 </button>
 <h5 class="mt-3 mx-3">All Product</h5>
@@ -38,36 +50,35 @@ include "../includes/header.php";
 
 <!-- product page -->
 <div class="d-flex flex-row flex-wrap my-3 mx-3 justify-content-around">
-  <a href="./apparels/index.php">
+  <a href="./apparels/index.php" class="product-item">
     <img src="../auth/img/shopping (1).webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Men/women</h4>
   </a>
-  <a href="">
+  <a href="" class="product-item">
     <img src="../auth/img/shopping10.webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">stationery</h4>
   </a>
-  <a href="">
+  <a href="" class="product-item">
     <img src="../auth/img/shopping (5).webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Toys</h4>
   </a>
-  <a href="">
+  <a href="" class="product-item">
     <img src="../auth/img/shopping (6).webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Prize</h4>
   </a>
-  <a href="">
+  <a href="" class="product-item">
     <img src="../auth/img/shopping (7).webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Print Cup</h4>
   </a>
-  <a href="">
+  <a href="" class="product-item">
     <img src="../auth/img/shopping.webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Extra Product</h4>
   </a>
-  <a href="">
+  <a href="" class="product-item">
     <img src="../auth/img/shopping.webp" class="rounded" alt="Shopping Image">
     <h4 class="text-center fs-6">Extra Product</h4>
   </a>
 </div>
-
 
 
 

@@ -260,7 +260,7 @@ include "includes/nav.php";
 <!--product-box-->
 <div class="d-flex flex-row flex-wrap mb-5 justify-content-evenly">
   <div class="card">
-    <a href="">
+    <a href="./product/apparels/">
       <img src="./auth/img/1.jpeg" class="card-img-top w-100 h-100" alt="...">
     </a>
     <div class="card-body">

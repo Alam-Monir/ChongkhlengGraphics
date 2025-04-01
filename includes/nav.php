@@ -1,3 +1,7 @@
+
+
+
+
 <nav class="navbar navbar-expand-lg sticky-top bg-body">
   <div class="container-fluid d-flex justify-content-between align-items-center">
   <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +41,7 @@
       </a>
 
       <a href="#" class="btn shopping-bag">
-        <i class="fas fa-shopping-bag"></i>
+        <i class="bi bi-bag-check"></i>
       </a>
     </form>
   </div>

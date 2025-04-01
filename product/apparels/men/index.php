@@ -59,10 +59,10 @@ include "../../../includes/header.php";
 <div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(235, 235, 235);">
   <button class="btn">
     <a href="../">
-      <i class="bi bi-arrow-left back-icon"></i>
+      <i class="bi bi-chevron-left" style="font-size: 1.7rem;"></i>
     </a>
   </button>
-  <h5 class="mt-3 mx-3">Men's T shirt</h5>
+  <h5 class="mt-3 mx-3">Men's</h5>
 </div>
 
 
