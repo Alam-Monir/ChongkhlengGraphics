@@ -31,6 +31,48 @@ include "./../../../../includes/header.php";
     box-shadow: 10px 10px 9px rgba(9, 9, 9, 0.2);
   }
 
+  .container {
+    margin: 20px 0 20px 5px;
+    max-width: 100%;
+    width: 700px;
+    height: 450px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 42px;
+    position: relative;
+
+    & .highlight {
+      position: absolute;
+      content: "";
+      height: 90px;
+      background-color: #fff;
+      width: 50%;
+      bottom: 0;
+      right: 0;
+      border-top-left-radius: 24px;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        width: 24px;
+        aspect-ratio: 1;
+        background: radial-gradient(circle 24px at top left,
+            #0000 98%,
+            #fff);
+      }
+
+      &:before {
+        bottom: 0;
+        left: -24px;
+      }
+
+      &:after {
+        right: 0;
+        top: -24px;
+      }
+    }
+  }
+
   @media (max-width: 991px) {
     .card-img-top {
       margin: 10px 0 0 40px;
@@ -63,6 +105,12 @@ include "./../../../../includes/header.php";
     .d-flex .address {
       max-width: 49vh;
       margin-bottom: 50px;
+    }
+
+    .container {
+      max-width: 100%;
+      width: 380px;
+      height: 300px;
     }
   }
 </style>
@@ -154,6 +202,27 @@ include "./../../../../includes/header.php";
     <div class=" card mt-2 mx-3 p-2 d-flex flex-row address" style="width: 98vh;">
       <div class="flex-grow-5 text-truncate">Land debbarma </div>
       <div class="ms-auto text-truncate">durga chowdhury parafdfnnvcnvn</div>
+    </div>
+
+
+    <!-- highlight product -->
+    <div class="container">
+      <div class="d-flex mt-3 p-1">
+        <div class="p-2 flex-grow-1 fw-bold">Highlight</div>
+        <div class="p-1">
+          <ul class="mx-2">
+            <li class="mt-2 ">Panel Type: IPS Panel</li>
+            <li class="mt-2">Screen Resolution</li>
+            <li class="mt-2">Morbi leo risus</li>
+            <li class="mt-2">Porta ac consectetur ac</li>
+            <li class="mt-2">Vestibulum at </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight align-content-center">
+        <a class="btn mt-2 mx-2 rounded-3 text-center align-content-center fw-bolder" style="height: 60px; width:170px; background-color:  rgb(228, 214, 214);" href="" role="button">All Details</a>
+      </div>
     </div>
 
   </div>

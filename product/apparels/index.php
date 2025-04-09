@@ -43,13 +43,19 @@ include "../../includes/header.php";
 
 
 <!-- back button -->
-<div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(235, 235, 235);">
+<div class="d-flex flex-row flex-wrap sticky-top" style="background-color: rgb(235, 235, 235); padding: 10px 15px;">
   <button class="btn">
     <a href="../index.php">
-      <i class="bi bi-chevron-left"></i>
+      <i class="bi bi-chevron-left" style="font-size: 1.7rem; color:black;"></i>
     </a>
   </button>
-  <h5 class="mt-3 mx-3">Fashion</h5>
+  <a href="/chongkhlenggraphics/" class="fw-bold d-inline-block mt-3 ms-2 me-auto">
+   Fashion
+  </a>
+  <form class="d-flex align-items-center ms-auto mx-2">
+    <i class="fas fa-search d-md-none" aria-label="Search" style="font-size: 1rem;"></i>
+    <i class="bi bi-bag-check ms-3 d-md-none" style="font-size: 1rem;"></i>
+  </form>
 </div>
 
 <!-- product -->

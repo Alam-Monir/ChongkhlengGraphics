@@ -14,8 +14,9 @@ include "includes/nav.php";
 
   .justify-content-evenly img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
   }
 
   .carousel-inner img {
@@ -76,6 +77,59 @@ include "includes/nav.php";
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 20%;
     flex-shrink: 0;
+  }
+  .slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 10% 90%,
+      transparent
+    );
+  }
+  .slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+  }
+  .slider .list .items{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
+  }
+  .slider .list .items img{
+    width: 100%;
+  }
+  @keyframes autoRun{
+    from{
+      left: 100%;
+    }
+    to{
+      left: calc(var(--width) * -1);
+    }
+  }
+
+  @keyframes appear{
+    from{
+      opacity: 0;
+      scale: 0.5;
+    }
+    to{
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  #ani{
+
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 13%;
   }
   
   @media (max-width: 991px) {
@@ -138,8 +192,8 @@ include "includes/nav.php";
     }
     .justify-content-evenly img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
   }
 
   }
@@ -202,12 +256,13 @@ include "includes/nav.php";
 
 
 <!--brands-list-->
-<div class="d-flex flex justify-content-evenly mt-4 mb-5 p-3 bg-body">
+<div id="ani">
+<div class="d-flex justify-content-evenly mt-5 mb-3 p-3 brand-img">
   <a href="product/">
-    <img src="./auth/img/all.png" class="rounded-circle">
+    <img src="./auth/img/icons8-grid-32.png" class="rounded-circle">
   </a>
   <a href="#">
-    <img src="./auth/img/hm.png" class="rounded-circle">
+    <img src="./auth/img/icons8-shirt-48 (1).png" class="rounded-circle">
   </a>
   <a href="#">
     <img src="./auth/img/puma22.png" class="rounded-circle">
@@ -222,10 +277,12 @@ include "includes/nav.php";
     <img src="./auth/img/hm.png" class="rounded-circle">
   </a>
 </div>
+</div>
 
 
 <!--img-sliding-->
-<div id="carouselExampleInterval" class="carousel slide p-2 mx-3" data-bs-ride="carousel">
+<div id="ani">
+<div id="carouselExampleInterval" class="carousel slide p-2 mx-2" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-inner rounded-4">
       <div class="carousel-item active">
@@ -248,17 +305,21 @@ include "includes/nav.php";
     </button>
   </div>
 </div>
+</div>
 
 <!--product list name-->
+<div id="ani">
 <div class="d-flex justify-content-between  mt-5 mx-5">
   <p class="fs-4 d-inline fw-bold">New Arrivel</p>
   <a href="https://www.youtube.com/watch?v=-FP2Cmc7zj4"
     <p class="d-niline float-end" style="color: red;">See All</p>
   </a>
 </div>
+</div>
 
 <!--product-box-->
-<div class="d-flex flex-row flex-wrap mb-5 justify-content-evenly">
+<div id="ani">
+<div class="d-flex flex-row flex-wrap mb-5 justify-content-evenly" style="border: none;">
   <div class="card">
     <a href="./product/apparels/">
       <img src="./auth/img/1.jpeg" class="card-img-top w-100 h-100" alt="...">
@@ -304,9 +365,11 @@ include "includes/nav.php";
     </div>
   </div>
 </div>
+</div>
 
 
 <!--extra-product1-->
+<div id="ani">
 <div class="d-flex flex-row flex-wrap  mx-3 mb-3 rounded-5" style="background-color: rgb(216, 196, 182);">
   <div class="container">
     <h2 class="text-center my-2">Baby Point</h2>
@@ -321,8 +384,10 @@ include "includes/nav.php";
     </div>
   </div>
 </div>
+</div>
 
 <!--extra-product-more-->
+<div id="ani">
 <div class="container">
   <h2 class="text-center my-4">More offer on T-shirt</h2>
   <div class="image-container-1 my-4">
@@ -335,6 +400,26 @@ include "includes/nav.php";
     <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
     <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
   </div>
+</div>
+</div>
+
+
+
+<div class="d-flex justify-content-center mt-5">
+  <h4 class="fw-bolder">OFFER</h4>
+</div>
+<div class="slider mt-1 my-5" style="--width:100px; --height:50px; --quantity:10;">
+<div class="list">
+  <div class="items" style="--position: 1;"><img src="./auth/img/100.png" alt=""></div>
+  <div class="items"  style="--position: 2;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+  <div class="items"  style="--position: 3;"><img src="./auth/img/100.png" alt=""></div>
+  <div class="items"  style="--position: 4;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+  <div class="items"  style="--position: 5;"><img src="./auth/img/100.png" alt=""></div>
+  <div class="items"  style="--position: 6;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+  <div class="items"  style="--position: 7;"><img src="./auth/img/100.png" alt=""></div>
+  <div class="items"  style="--position: 8;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+  <div class="items"  style="--position: 9;"><img src="./auth/img/100.png" alt=""></div>
+  <div class="items"  style="--position: 10;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
 </div>
 </div>
 

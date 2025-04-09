@@ -39,20 +39,26 @@ include "../includes/header.php";
 <!-- all product page -->
 
 <!-- back button -->
-<div class="d-flex flex-row flex-wrap sticky-top" style="background-color:  rgb(250, 250, 250);">
-<button class="btn">
+<div class="d-flex flex-row flex-wrap sticky-top" style="background-color: rgb(235, 235, 235); padding: 10px 15px;">
+  <button class="btn">
     <a href="../index.php">
-  <i class="bi bi-chevron-left"></i> 
-</a>
-</button>
-<h5 class="mt-3 mx-3">All Product</h5>
+      <i class="bi bi-chevron-left" style="font-size: 1.7rem; color:black;"></i>
+    </a>
+  </button>
+  <a href="/chongkhlenggraphics/" class="fw-bold d-inline-block mt-3 ms-2 me-auto">
+    All Product
+  </a>
+  <form class="d-flex align-items-center ms-auto mx-2">
+    <i class="fas fa-search d-md-none" aria-label="Search" style="font-size: 1rem;"></i>
+    <i class="bi bi-bag-check ms-3 d-md-none" style="font-size: 1rem;"></i>
+  </form>
 </div>
 
 <!-- product page -->
-<div class="d-flex flex-row flex-wrap my-3 mx-3 justify-content-around">
-  <a href="./apparels/index.php" class="product-item">
+<div class="d-flex flex-row flex-wrap my-4 mx-3 justify-content-around">
+  <a href="./apparels/index.php" class="product-item mb-3">
     <img src="../auth/img/shopping (1).webp" class="rounded" alt="Shopping Image">
-    <h4 class="text-center fs-6">Men/women</h4>
+    <h4 class="text-center fs-6">Clothing</h4>
   </a>
   <a href="" class="product-item">
     <img src="../auth/img/shopping10.webp" class="rounded" alt="Shopping Image">
