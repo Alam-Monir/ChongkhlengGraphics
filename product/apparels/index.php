@@ -50,7 +50,7 @@ include "../../includes/header.php";
     <div class="d-flex flex-row flex-wrap align-items-center" style="background-color: rgb(235, 235, 235); padding: 10px 15px;">
       <button class="btn p-0">
         <a href="../index.php">
-          <i class="bi bi-chevron-left" style="font-size: 1.7rem; color:black;"></i>
+          <i class="bi bi-chevron-left" style="font-size: 1.3rem; color:black;"></i>
         </a>
       </button>
 
