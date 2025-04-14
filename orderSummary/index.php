@@ -15,25 +15,96 @@ include "./../includes/header.php";
     align-items: center;
     padding: 0;
     border-radius: 17px;
-    border:none;color:black;
+    border: none;
+    color: black;
   }
 </style>
 
-<div class="d-flex flex-row flex-wrap sticky-top" style="background-color: rgb(235, 235, 235); padding: 10px 15px;">
-  <button class="btn">
-    <a href="./../product/apparels/men/productPage">
-      <i class="bi bi-chevron-left" style="font-size: 1.7rem;"></i>
-    </a>
-  </button>
-  <a href="/chongkhlenggraphics/" class="fw-bold d-inline-block mt-3 ms-2 me-auto">
-    CG STORE
-  </a>
+<!-- back navbar -->
+<div class="accordion sticky-top" id="navToggle">
+  <div class="collapse show" id="mainNavbar" data-bs-parent="#navToggle">
+    <div class="d-flex align-items-center justify-content-between px-3 py-2" style="background-color: rgb(235, 235, 235);">
+
+      <!-- Back Button -->
+      <a href="../index.php" class="btn p-0">
+        <i class="bi bi-chevron-left fs-4 text-dark"></i>
+      </a>
+
+      <!-- Brand Name -->
+      <a href="/chongkhlenggraphics/" class="fw-bold ms-2 me-auto text-dark text-decoration-none">
+        CG STORE
+      </a>
+
+      <!-- Desktop Search -->
+      <form class="d-none d-md-flex align-items-center">
+        <span class="input-group-text bg-light border-end-0" style="border-radius: 15px 0 0 15px;">
+          <i class="fas fa-search"></i>
+        </span>
+        <input type="search" class="form-control bg-light border-start-0" placeholder="What are you looking for..." style="width: 400px; border-radius: 0 15px 15px 0;">
+        <i class="bi bi-bag-check ms-3"></i>
+      </form>
+
+      <!-- Mobile Icons -->
+      <div class="d-md-none d-flex align-items-center">
+        <!-- Toggle Search Bar and Hide Navbar -->
+        <a class="text-dark" data-bs-toggle="collapse" href="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+          <i class="bi bi-search fs-6"></i>
+        </a>
+        <i class="bi bi-bag-check ms-3 fs-6"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapse" id="mobileSearch" data-bs-parent="#navToggle">
+    <div class="input-group p-3 bg-white">
+      <!-- Back Button to return to navbar -->
+      <span class="input-group-text bg-white border-end-0">
+        <a data-bs-toggle="collapse" href="#mainNavbar" class="text-dark">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+      </span>
+      <input type="text" class="form-control border-start-0" placeholder="Search..." style="height: 48px;">
+    </div>
+  </div>
+
 </div>
 
 <!-- order summary page -->
 <div class=" d-flex flex-row mt-3">
   <div class="fs-5 mt-4 mx-4 flex-grow-1 fw-bolder">Deliver to :</div>
-  <a class="btn btn-secondary align-items-center mt-4 mx-4 mb-4" href="#" role="button">Add Address</a>
+  <a class="btn btn-secondary align-items-center mt-4 mx-4 mb-4 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button">Add Address</a>
+
+  <!-- add address -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Address</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="">
+            <label for="floatingInput"> Add address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInput" placeholder="">
+            <label for="floatingInput"> Phone Number</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInput" placeholder="">
+            <label for="floatingInput">Zip Code</label>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="d-flex flex-column mx-3">

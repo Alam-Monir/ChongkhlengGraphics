@@ -111,7 +111,7 @@ include "includes/nav.php";
       left: 100%;
     }
     to{
-      left: calc(var(--width) * -1);
+      left: calc(var(--width) * -5);
     }
   }
 
@@ -129,7 +129,7 @@ include "includes/nav.php";
 
     animation: appear linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 13%;
+    animation-range: entry 0% cover 11%;
   }
   
   @media (max-width: 991px) {
@@ -249,7 +249,7 @@ include "includes/nav.php";
 <!--search-icon-->
 <div class="input-group mt-3 custom-search-bar p-2">
   <span class="input-group-text bg-body-tertiary p-2 bg-light" style="border-radius: 15px 0 0 15px; margin-left:10px; border-right:none;">
-    <i class="fas fa-search"></i>
+  <i class="bi bi-search"></i>
   </span>
   <input <span class="form-control me-2 bg-body-tertiary" type="search" placeholder="What are you looking for..." aria-label="Search" style="border-radius: 0 15px 15px 0; border-left:none;">
 </div>

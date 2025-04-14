@@ -103,7 +103,8 @@ include "./../../../../includes/header.php";
     }
 
     .d-flex .address {
-      max-width: 49vh;
+      max-width: 100%;
+      width: 22rem;
       margin-bottom: 50px;
     }
 
@@ -115,26 +116,55 @@ include "./../../../../includes/header.php";
   }
 </style>
 <!-- back button -->
-<div class="d-flex flex-row flex-wrap sticky-top" style="background-color: rgb(235, 235, 235); padding: 10px 15px;">
-  <button class="btn">
-    <a href="../index.php">
-      <i class="bi bi-chevron-left" style="font-size: 1.7rem; color:black;"></i>
-    </a>
-  </button>
-  <a href="/chongkhlenggraphics/" class="fw-bold d-inline-block mt-3 ms-2 me-auto">
-    CG STORE
-  </a>
-  <form class="d-flex align-items-center ms-auto mx-2">
-    <!-- <i class="fas fa-search d-none d-md-inline-block" aria-label="Search" style="font-size: 1rem;"></i> -->
-    <span class="input-group-text bg-body-tertiary p-2 bg-light" style="height:45px; border-radius: 15px 0 0 15px; margin-left:10px; border-right:none;">
-      <i class="fas fa-search"></i>
-    </span>
-    <input <span class="form-control me-2 bg-body-tertiary" type="search" placeholder="What are you looking for..." aria-label="Search" style=" height:45px; width:500px; border-radius: 0 15px 15px 0; border-left:none;">
-    <i class="bi bi-bag-check ms-3 d-none d-md-inline-block" style="font-size: 1rem;"></i>
+<div class="accordion sticky-top" id="navToggle">
 
-    <i class="fas fa-search d-md-none" aria-label="Search" style="font-size: 1rem;"></i>
-    <i class="bi bi-bag-check ms-3 d-md-none" style="font-size: 1rem;"></i>
-  </form>
+  <!-- Navbar -->
+  <div class="collapse show" id="mainNavbar" data-bs-parent="#navToggle">
+    <div class="d-flex align-items-center justify-content-between px-3 py-2" style="background-color: rgb(235, 235, 235);">
+      
+      <!-- Back Button -->
+      <a href="../index.php" class="btn p-0">
+        <i class="bi bi-chevron-left fs-4 text-dark"></i>
+      </a>
+
+      <!-- Brand Name -->
+      <a href="/chongkhlenggraphics/" class="fw-bold ms-2 me-auto text-dark text-decoration-none">
+        CG STORE
+      </a>
+
+      <!-- Desktop Search -->
+      <form class="d-none d-md-flex align-items-center">
+        <span class="input-group-text bg-light border-end-0" style="border-radius: 15px 0 0 15px;">
+          <i class="fas fa-search"></i>
+        </span>
+        <input type="search" class="form-control bg-light border-start-0" placeholder="What are you looking for..." style="width: 400px; border-radius: 0 15px 15px 0;">
+        <i class="bi bi-bag-check ms-3"></i>
+      </form>
+
+      <!-- Mobile Icons -->
+      <div class="d-md-none d-flex align-items-center">
+        <!-- Toggle Search Bar and Hide Navbar -->
+        <a class="text-dark" data-bs-toggle="collapse" href="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+          <i class="bi bi-search fs-6"></i>
+        </a>
+        <i class="bi bi-bag-check ms-3 fs-6"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Search -->
+  <div class="collapse" id="mobileSearch" data-bs-parent="#navToggle">
+    <div class="input-group p-3 bg-white">
+      <!-- Back Button to return to navbar -->
+      <span class="input-group-text bg-white border-end-0">
+        <a data-bs-toggle="collapse" href="#mainNavbar" class="text-dark">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+      </span>
+      <input type="text" class="form-control border-start-0" placeholder="Search..." style="height: 48px;">
+    </div>
+  </div>
+
 </div>
 
 
@@ -199,10 +229,11 @@ include "./../../../../includes/header.php";
 
 
 
-    <div class=" card mt-2 mx-3 p-2 d-flex flex-row address" style="width: 98vh;">
-      <div class="flex-grow-5 text-truncate">Land debbarma </div>
-      <div class="ms-auto text-truncate">durga chowdhury parafdfnnvcnvn</div>
-    </div>
+    <div class="d-flex mt-5 mx-1" style="border: solid 0.1px black; border-radius:10px;">
+  <div class="p-2 flex-fill text-truncate">Land Debbarma</div>
+  <div class="p-2 text-truncate">Durga chowdhury para</div>
+</div>
+
 
 
     <!-- highlight product -->
