@@ -115,13 +115,12 @@ include "./../../../../includes/header.php";
     }
   }
 </style>
-<!-- back button -->
-<div class="accordion sticky-top" id="navToggle">
 
-  <!-- Navbar -->
+<!-- Navbar -->
+<div class="accordion sticky-top" id="navToggle">
   <div class="collapse show" id="mainNavbar" data-bs-parent="#navToggle">
     <div class="d-flex align-items-center justify-content-between px-3 py-2" style="background-color: rgb(235, 235, 235);">
-      
+
       <!-- Back Button -->
       <a href="../index.php" class="btn p-0">
         <i class="bi bi-chevron-left fs-4 text-dark"></i>
@@ -132,18 +131,20 @@ include "./../../../../includes/header.php";
         CG STORE
       </a>
 
-      <!-- Desktop Search -->
-      <form class="d-none d-md-flex align-items-center">
-        <span class="input-group-text bg-light border-end-0" style="border-radius: 15px 0 0 15px;">
-          <i class="fas fa-search"></i>
-        </span>
-        <input type="search" class="form-control bg-light border-start-0" placeholder="What are you looking for..." style="width: 400px; border-radius: 0 15px 15px 0;">
-        <i class="bi bi-bag-check ms-3"></i>
-      </form>
+    <!-- Desktop Search -->
+    <form class="d-none d-md-flex align-items-center mx-auto" style="width: 640px; margin-right: 600px;">
+  <div class="input-group w-100" style="border-radius: 15px; background-color: #f8f9fa;">
+    <span class="input-group-text border-0" style="border-radius: 15px 0 0 15px; background-color:rgb(208, 208, 208);">
+      <i class="fas fa-search"></i>
+    </span>
+    <input type="search" class="form-control bg-light border-0" placeholder="What are you looking for..." style="border-radius: 0 15px 15px 0;">
+  </div>
+  <i class="bi bi-bag-check ms-3"></i>
+</form>
 
-      <!-- Mobile Icons -->
+
+      <!-- Mobile search -->
       <div class="d-md-none d-flex align-items-center">
-        <!-- Toggle Search Bar and Hide Navbar -->
         <a class="text-dark" data-bs-toggle="collapse" href="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
           <i class="bi bi-search fs-6"></i>
         </a>
@@ -230,9 +231,9 @@ include "./../../../../includes/header.php";
 
 
     <div class="d-flex mt-5 mx-1" style="border: solid 0.1px black; border-radius:10px;">
-  <div class="p-2 flex-fill text-truncate">Land Debbarma</div>
-  <div class="p-2 text-truncate">Durga chowdhury para</div>
-</div>
+      <div class="p-2 flex-fill text-truncate">Land Debbarma</div>
+      <div class="p-2 text-truncate">Durga chowdhury para</div>
+    </div>
 
 
 

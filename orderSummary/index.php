@@ -35,14 +35,16 @@ include "./../includes/header.php";
         CG STORE
       </a>
 
-      <!-- Desktop Search -->
-      <form class="d-none d-md-flex align-items-center">
-        <span class="input-group-text bg-light border-end-0" style="border-radius: 15px 0 0 15px;">
-          <i class="fas fa-search"></i>
-        </span>
-        <input type="search" class="form-control bg-light border-start-0" placeholder="What are you looking for..." style="width: 400px; border-radius: 0 15px 15px 0;">
-        <i class="bi bi-bag-check ms-3"></i>
-      </form>
+    <!-- Desktop Search -->
+    <form class="d-none d-md-flex align-items-center mx-auto" style="width: 640px; margin-right: 600px;">
+  <div class="input-group w-100" style="border-radius: 15px; background-color: #f8f9fa;">
+    <span class="input-group-text border-0" style="border-radius: 15px 0 0 15px; background-color:rgb(208, 208, 208);">
+      <i class="fas fa-search"></i>
+    </span>
+    <input type="search" class="form-control bg-light border-0" placeholder="What are you looking for..." style="border-radius: 0 15px 15px 0;">
+  </div>
+  <i class="bi bi-bag-check ms-3"></i>
+</form>
 
       <!-- Mobile Icons -->
       <div class="d-md-none d-flex align-items-center">
