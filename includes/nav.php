@@ -40,7 +40,7 @@
         <i class="fas fa-search" type="search" aria-label="Search"></i>
       </a>
 
-      <a href="#" class="btn shopping-bag">
+      <a href="./orderSummary/cart/" class="btn shopping-bag">
         <i class="bi bi-bag-check"></i>
       </a>
     </form>

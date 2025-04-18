@@ -404,7 +404,7 @@ include "includes/nav.php";
 </div>
 
 
-
+<!-- sliding offer -->
 <div class="d-flex justify-content-center mt-5">
   <h4 class="fw-bolder">OFFER</h4>
 </div>

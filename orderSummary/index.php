@@ -35,16 +35,18 @@ include "./../includes/header.php";
         CG STORE
       </a>
 
-    <!-- Desktop Search -->
-    <form class="d-none d-md-flex align-items-center mx-auto" style="width: 640px; margin-right: 600px;">
-  <div class="input-group w-100" style="border-radius: 15px; background-color: #f8f9fa;">
-    <span class="input-group-text border-0" style="border-radius: 15px 0 0 15px; background-color:rgb(208, 208, 208);">
-      <i class="fas fa-search"></i>
-    </span>
-    <input type="search" class="form-control bg-light border-0" placeholder="What are you looking for..." style="border-radius: 0 15px 15px 0;">
-  </div>
-  <i class="bi bi-bag-check ms-3"></i>
-</form>
+      <!-- Desktop Search -->
+      <form class="d-none d-md-flex align-items-center mx-auto" style="width: 640px; margin-right: 600px;">
+        <div class="input-group w-100" style="border-radius: 15px; background-color: #f8f9fa;">
+          <span class="input-group-text border-0" style="border-radius: 15px 0 0 15px; background-color:rgb(208, 208, 208);">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="search" class="form-control bg-light border-0" placeholder="What are you looking for..." style="border-radius: 0 15px 15px 0;">
+        </div>
+        <a href="/chongkhlenggraphics/">
+        <i class="bi bi-bag-check ms-3 fs-6"></i>
+        </a>
+      </form>
 
       <!-- Mobile Icons -->
       <div class="d-md-none d-flex align-items-center">
@@ -52,7 +54,9 @@ include "./../includes/header.php";
         <a class="text-dark" data-bs-toggle="collapse" href="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
           <i class="bi bi-search fs-6"></i>
         </a>
+        <a href="/chongkhlenggraphics/">
         <i class="bi bi-bag-check ms-3 fs-6"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -71,6 +75,9 @@ include "./../includes/header.php";
 
 </div>
 
+<!-- page name -->
+<div class="d-flex fw-bold mt-4" style="margin-left: 20px;"> .My Cart </div>
+
 <!-- order summary page -->
 <div class=" d-flex flex-row mt-3">
   <div class="fs-5 mt-4 mx-4 flex-grow-1 fw-bolder">Deliver to :</div>
@@ -84,8 +91,8 @@ include "./../includes/header.php";
           <h1 class="modal-title fs-5" id="exampleModalLabel">Add Address</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
 
+        <div class="modal-body">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput" placeholder="">
             <label for="floatingInput"> Add address</label>
@@ -107,6 +114,7 @@ include "./../includes/header.php";
       </div>
     </div>
   </div>
+
 </div>
 
 <div class="d-flex flex-column mx-3">
@@ -165,10 +173,10 @@ include "./../includes/header.php";
 <!-- buy button -->
 <div class="d-flex justify-content-around flex-row mt-5 mb-2 button">
   <div class="align-items-center">
-    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color: #D8C4B6;" href="#" role="button">699</a>
+    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color: #D8C4B6;" href="#" role="button">Add To Cart</a>
   </div>
   <div class="align-items-center">
-    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color :#F5EFE7;" href="#" role="button">Continue</a>
+    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color :#F5EFE7;" href="../orderSummary/cart/" role="button">Continue</a>
   </div>
 </div>
 
