@@ -114,33 +114,33 @@ include "../../includes/header.php";
 </div>
 
 <!-- page name -->
-<div class="d-flex fw-bold mt-4" style="margin-left: 20px;"> .all cloths </div>
+<div class="d-flex fw-bold mt-4" style="margin-left: 20px;">Fashion</div>
 
 <!-- product -->
 <div class="d-flex flex-row flex-wrap my-4 mx-3 justify-content-around">
   <a href="./men/" class="category-item">
     <img src="../../auth/img/shopping (1).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-center fs-6">Men</h4>
+    <h4 class="text-truncate small text-start">Men</h4>
   </a>
   <a href="./women/" class="category-item">
     <img src="../../auth/img/shopping (8).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-center fs-6">Women</h4>
+    <h4 class="text-truncate small text-start">Women</h4>
   </a>
   <a href="" class="category-item">
     <img src="../../auth/img/download.webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-center fs-6">kids</h4>
+    <h4 class="text-truncate small text-start">kids</h4>
   </a>
   <a href="" class="category-item">
-    <img src="../../auth/img/shopping (6).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-center fs-6">Men Topwear</h4>
+    <img src="../../auth/img/shopping (9).webp" class="rounded category-img" alt="Shopping Image">
+    <h4 class="text-truncate small text-start">Men Bottom</h4>
   </a>
   <a href="" class="category-item">
-    <img src="../../auth/img/shopping (7).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-center fs-6">Women topwear</h4>
+    <img src="../../auth/img/shopping (10).webp" class="rounded category-img" alt="Shopping Image">
+    <h4 class="text-truncate small text-start">Women Bottom</h4>
   </a>
   <a href="" class="category-item">
-    <img src="../../auth/img/shopping.webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-center fs-6">Extra Product</h4>
+    <img src="../../auth/img/shopping (11).webp" class="rounded category-img" alt="Shopping Image">
+    <h4 class="text-truncate small text-start">Kids Fottwear</h4>
   </a>
 </div>
 

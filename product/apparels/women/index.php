@@ -19,8 +19,8 @@ include "../../../includes/header.php";
     object-fit: cover;
   }
 
-  .text-center {
-    margin-top: 5px;
+  .text-start {
+    margin: 0 0 0 15px;
     font-size: 15px;
   }
 
@@ -49,7 +49,7 @@ include "../../../includes/header.php";
 
     .text-start {
       font-size: 14px;
-      margin: 0 0 0 5px;
+      margin: 0 0 0 20px;
       padding-top: 5px;
     }
   }
@@ -140,66 +140,109 @@ include "../../../includes/header.php";
 
 
 <!-- page name -->
-<div class="d-flex fw-bold mt-4" style="margin-left: 20px;"> .My Cart </div>
+<div class="d-flex fw-bold mt-4" style="margin-left: 20px;">Women</div>
 
 
 
   <!-- mens product -->
-  <div class="d-flex flex-wrap my-3 p-1 justify-content-around pro">
-    <a href="productPage/" class="product-item">
-      <img src="../../../auth/img/shopping (2).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (4).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (3).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (2).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (3).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (4).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-    <a href="" class="product-item">
-      <img src="../../../auth/img/shopping (1).webp" class="rounded product-img" alt="Shopping Image">
-      <p class="text-start">adidas Originals t shirt<br> <span class="fs-6 fw-semibold">₹819</span></p>
-    </a>
-  </div>
+  <div class="d-flex flex-wrap my-3 p-1 justify-content-evenly pro">
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+  adidas Originals t shirtgbnfgncfg<br>
+  <span class="fs-6 fw-semibold">₹819</span>
+</p>
 
+  </a>
+
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (3).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+ <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (4).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+ <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (5).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+ <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (6).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+ <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (7).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+ <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+
+  <a href="productPage/" class="product-item text-decoration-none col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+    <img src="../../../auth/img/shopping (2).webp" class="rounded product-img img-fluid" alt="Shopping Image">
+    <p class="text-start text-truncate small w-75" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      adidas Originals t shirtgbnfgncfg<br>
+      <span class="fs-6 fw-semibold">₹819</span>
+    </p>
+  </a>
+</div>
 
 
   <?php include "../../../includes/footer.php"; ?>
