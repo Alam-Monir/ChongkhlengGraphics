@@ -81,6 +81,11 @@ $layoutName = htmlspecialchars($row['layoutName']);
     </div>
 </div>
 
+<!-- Progress Bar HTML -->
+<div id="renderProgressBar" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; height: 30px; background-color: #f3f3f3; border-radius: 5px; border: 2px solid #4caf50; z-index: 9999;">
+    <div id="progressBar" style="height: 100%; width: 0%; background-color: #4caf50; text-align: center; color: white; border-radius: 5px;">0%</div>
+</div>
+
 <!-- Excel Modal -->
 <div class="modal fade" id="excelModal" tabindex="-1" aria-labelledby="excelModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -234,6 +239,11 @@ $layoutName = htmlspecialchars($row['layoutName']);
 <!-- Excel Upload script -->
 <script>
     document.getElementById("excelExportButton").addEventListener("click", function() {
+        var modal = bootstrap.Modal.getInstance(document.getElementById('excelModal'));
+        modal.hide();
+
+        document.getElementById("renderProgressBar").style.display = "block";
+
         let formData = new FormData();
         formData.append("excelFile", document.getElementById("excelFile").files[0]);
         formData.append("zipFile", document.getElementById("zipFile").files[0]);
@@ -285,16 +295,46 @@ $layoutName = htmlspecialchars($row['layoutName']);
             format: [pdfPageWidth, pdfPageHeight]
         });
 
-        for (let student of students) {
-            await fillCard(student);
+        const totalStudents = students.length;
+
+        document.getElementById("renderProgressBar").style.display = "block";
+
+        for (let i = 0; i < totalStudents; i++) {
+            await fillCard(students[i]);
             let imgData = await captureCard();
 
             pdf.addImage(imgData, 'JPEG', x, y, cardWidth, cardHeight);
 
-            if (students.indexOf(student) < students.length - 1) {
+            const progress = ((i + 1) / totalStudents) * 100;
+            document.getElementById("progressBar").style.width = progress + "%";
+            document.getElementById("progressBar").ariaValueNow = progress;
+            document.getElementById("progressBar").textContent = Math.round(progress) + "%";
+
+            if (i < totalStudents - 1) {
                 pdf.addPage();
             }
         }
+
+        document.getElementById("renderProgressBar").style.display = "none";
+
+        const successMessage = document.createElement('div');
+        successMessage.textContent = "ID Creation Successful!";
+        successMessage.style.position = "fixed";
+        successMessage.style.top = "50%";
+        successMessage.style.left = "50%";
+        successMessage.style.transform = "translate(-50%, -50%)";
+        successMessage.style.backgroundColor = "#4caf50";
+        successMessage.style.color = "white";
+        successMessage.style.padding = "20px";
+        successMessage.style.fontSize = "20px";
+        successMessage.style.borderRadius = "10px";
+        successMessage.style.zIndex = "9999";
+        document.body.appendChild(successMessage);
+
+        setTimeout(() => {
+            successMessage.remove();
+            window.location.reload();
+        }, 3000);
 
         pdf.save("Student_ID_Cards.pdf");
     }
