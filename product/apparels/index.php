@@ -13,28 +13,27 @@ include "../../includes/header.php";
   }
 
   .rounded {
+    margin-right: 10px;
     width: 200px;
     height: 300px;
     object-fit: cover;
   }
 
-  .category-item {
-    text-align: center;
-    transition: all 0.3s ease;
-  }
+  .row .col-4 .d-block {
+  position: relative;
+  display: block;
+  text-align: center;
+}
 
-  .category-img {
-    transition: transform 0.3s ease;
-  }
-
-  .category-item:hover .category-img {
-    transform: scale(1.1);
-  }
+.row .col-4 .d-block:hover img {
+  transform: scale(1.1);  
+  transition: transform 0.3s ease-in-out;
+}
 
 
   @media (max-width: 991px) {
     .rounded {
-      width: 100px;
+      width: 10000px;
       height: 150px;
       object-fit: cover;
     }
@@ -117,32 +116,45 @@ include "../../includes/header.php";
 <div class="d-flex fw-bold mt-4" style="margin-left: 20px;">Fashion</div>
 
 <!-- product -->
-<div class="d-flex flex-row flex-wrap my-4 mx-3 justify-content-around">
-  <a href="./men/" class="category-item">
-    <img src="../../auth/img/shopping (1).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-truncate small text-start">Men</h4>
-  </a>
-  <a href="./women/" class="category-item">
-    <img src="../../auth/img/shopping (8).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-truncate small text-start">Women</h4>
-  </a>
-  <a href="" class="category-item">
-    <img src="../../auth/img/download.webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-truncate small text-start">kids</h4>
-  </a>
-  <a href="" class="category-item">
-    <img src="../../auth/img/shopping (9).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-truncate small text-start">Men Bottom</h4>
-  </a>
-  <a href="" class="category-item">
-    <img src="../../auth/img/shopping (10).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-truncate small text-start">Women Bottom</h4>
-  </a>
-  <a href="" class="category-item">
-    <img src="../../auth/img/shopping (11).webp" class="rounded category-img" alt="Shopping Image">
-    <h4 class="text-truncate small text-start">Kids Fottwear</h4>
-  </a>
+<div class="row my-4 mx-3">
+  <div class="col-4 col-lg-2 text-center mb-4">
+    <a href="./men/" class="d-block">
+      <img src="../../auth/img/shopping (1).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
+      <h4 class="text-start text-truncate small w-75 mx-auto">Mens top Wear</h4>
+    </a>
+  </div>
+  <div class="col-4 col-lg-2 text-center mb-4">
+    <a href="./women/" class="d-block">
+      <img src="../../auth/img/shopping (8).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
+      <h4 class="text-start text-truncate small w-75 mx-auto">Womens Top Wear</h4>
+    </a>
+  </div>
+  <div class="col-4 col-lg-2 text-center mb-4">
+    <a href="#" class="d-block">
+      <img src="../../auth/img/download.webp" class="img-fluid rounded mb-2" alt="Shopping Image">
+      <h4 class="text-start text-truncate small w-75 mx-auto">Kids wear</h4>
+    </a>
+  </div>
+  <div class="col-4 col-lg-2 text-center mb-4">
+    <a href="#" class="d-block">
+      <img src="../../auth/img/shopping (9).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
+      <h4 class="text-start text-truncate small w-75 mx-auto">mens footwear</h4>
+    </a>
+  </div>
+  <div class="col-4 col-lg-2 text-center mb-4">
+    <a href="#" class="d-block">
+      <img src="../../auth/img/shopping (10).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
+      <h4 class="text-start text-truncate small w-75 mx-auto">Women footwear</h4>
+    </a>
+  </div>
+  <div class="col-4 col-lg-2 text-center mb-4">
+    <a href="#" class="d-block">
+      <img src="../../auth/img/shopping (11).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
+      <h4 class="text-start text-truncate small w-75 mx-auto">Kids footwear</h4>
+    </a>
+  </div>
 </div>
+
 
 
 <?php include "../../includes/footer.php"; ?>

@@ -187,10 +187,20 @@ include "./../../../../includes/header.php";
       <a class="card text-center btn btn-primary" href="#" role="button">XL</a>
     </div>
 
-    <div class="d-flex justify-content-around mt-4">
-      <a class="btn mt-1 my-3 rounded-3 text-center align-content-center fw-bolder" style="height: 60px; width:190px; background-color:  rgb(235, 235, 235);" href="" role="button">Add to Cart</a>
-      <a class="btn mt-1 my-3 rounded-3 text-center align-content-center fw-bolder" style="height: 60px; width:190px; background-color:  rgb(228, 214, 214);" href="./../../../../orderSummary/" role="button">Buy Now</a>
+    <div class="d-flex justify-content-around mt-4 mx-2 gap-2">
+      <a class="btn mt-1 my-3 rounded-3 fw-bolder d-flex justify-content-center align-items-center"
+        style="height: 60px; width:190px; background-color: rgb(235, 235, 235);"
+        href="./../../../../orderSummary/cart/" role="button">
+        <i class="bi bi-cart-check-fill mx-2"></i> Add to Cart
+      </a>
+
+      <a class="btn mt-1 my-3 rounded-3 fw-bolder d-flex justify-content-center align-items-center"
+        style="height: 60px; width:190px; background-color: rgb(228, 214, 214);"
+        href="./../../../../orderSummary/" role="button">
+        Buy Now
+      </a>
     </div>
+
   </div>
 
   <!-- product  details left -->
@@ -234,9 +244,9 @@ include "./../../../../includes/header.php";
 
 
 
-    <div class="d-flex mt-5 mx-1" style="border: solid 0.1px black; border-radius:10px;">
-      <div class="p-2 flex-fill text-truncate">Land Debbarma</div>
-      <div class="p-2 text-truncate">Durga chowdhury para</div>
+    <div class="d-flex mt-5 mx-2" style="border: solid 0.1px black; border-radius:10px;">
+      <div class="p-2 mx-2 flex-fill text-truncate">Land Debbarma</div>
+      <div class="p-2 mx-2 text-truncate">Durga chowdhury para</div>
     </div>
 
 
@@ -257,7 +267,7 @@ include "./../../../../includes/header.php";
       </div>
 
       <div class="highlight align-content-center">
-        <a class="btn mt-2 mx-2 rounded-3 text-center align-content-center fw-bolder" style="height: 60px; width:170px; background-color:  rgb(228, 214, 214);" href="" role="button">All Details</a>
+        <a class="btn mx-2 rounded-3 text-center align-content-center fw-bolder" style="height: 60px; width:170px; background-color:  rgb(228, 214, 214);" href="" role="button">All Details</a>
       </div>
     </div>
 

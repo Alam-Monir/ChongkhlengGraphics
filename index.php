@@ -78,24 +78,25 @@ include "includes/nav.php";
     width: 20%;
     flex-shrink: 0;
   }
-  .slider{
+
+  .slider {
     width: 100%;
     height: var(--height);
     overflow: hidden;
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      #000 10% 90%,
-      transparent
-    );
+    mask-image: linear-gradient(to right,
+        transparent,
+        #000 10% 90%,
+        transparent);
   }
-  .slider .list{
+
+  .slider .list {
     display: flex;
     width: 100%;
     min-width: calc(var(--width) * var(--quantity));
     position: relative;
   }
-  .slider .list .items{
+
+  .slider .list .items {
     width: var(--width);
     height: var(--height);
     position: absolute;
@@ -103,35 +104,58 @@ include "includes/nav.php";
     animation: autoRun 10s linear infinite;
     animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
   }
-  .slider .list .items img{
+
+  .slider .list .items img {
     width: 100%;
   }
-  @keyframes autoRun{
-    from{
+
+  @keyframes autoRun {
+    from {
       left: 100%;
     }
-    to{
+
+    to {
       left: calc(var(--width) * -5);
     }
   }
 
-  @keyframes appear{
-    from{
+  @keyframes appear {
+    from {
       opacity: 0;
       scale: 0.5;
     }
-    to{
+
+    to {
       opacity: 1;
       scale: 1;
     }
   }
-  #ani{
+
+  #ani {
 
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 11%;
   }
-  
+
+  #ani .card {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  #ani .card:hover .card-img-top {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #ani .card:hover {
+    background-color: #f8f9fa;
+  }
+
+  #ani .card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
   @media (max-width: 991px) {
     .navbar-toggler-icon {
       width: 20px;
@@ -190,11 +214,12 @@ include "includes/nav.php";
       width: 40%;
       height: 220px;
     }
+
     .justify-content-evenly img {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 55px;
-    height: 55px;
-  }
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      width: 55px;
+      height: 55px;
+    }
 
   }
 </style>
@@ -248,159 +273,159 @@ include "includes/nav.php";
 
 <!--search-icon-->
 <div class="input-group mt-3 custom-search-bar p-2">
-  <span class="input-group-text bg-body-tertiary p-2 bg-light" style="border-radius: 15px 0 0 15px; margin-left:10px; border-right:none;">
-  <i class="bi bi-search"></i>
+  <span class="input-group-text bg-body-tertiary p-2 bg-light border-0" style="border-radius: 12px 0 0 12px; margin-left:10px; border-right:none;">
+    <i class="bi bi-search"></i>
   </span>
-  <input <span class="form-control me-2 bg-body-tertiary" type="search" placeholder="What are you looking for..." aria-label="Search" style="border-radius: 0 15px 15px 0; border-left:none;">
+  <input <span class="form-control me-2 bg-body-tertiary border-0" type="search" placeholder="What are you looking for..." aria-label="Search" style="border-radius: 0 12px 12px 0; border-left:none;">
 </div>
 
 
 <!--brands-list-->
 <div id="ani">
-<div class="d-flex justify-content-evenly mt-5 mb-3 p-3 brand-img">
-  <a href="product/">
-    <img src="./auth/img/icons8-grid-32.png" class="rounded-circle">
-  </a>
-  <a href="#">
-    <img src="./auth/img/icons8-shirt-48 (1).png" class="rounded-circle">
-  </a>
-  <a href="#">
-    <img src="./auth/img/puma22.png" class="rounded-circle">
-  </a>
-  <a href="#">
-    <img src="./auth/img/download.png" class="rounded-circle">
-  </a>
-  <a href="#">
-    <img src="./auth/img/hm.png" class="rounded-circle">
-  </a>
-  <a href="#">
-    <img src="./auth/img/hm.png" class="rounded-circle">
-  </a>
-</div>
+  <div class="d-flex justify-content-evenly mt-1 mb-3 p-3 brand-img">
+    <a href="product/">
+      <img src="./auth/img/icons8-grid-32.png" class="rounded-circle">
+    </a>
+    <a href="#">
+      <img src="./auth/img/icons8-shirt-48 (1).png" class="rounded-circle">
+    </a>
+    <a href="#">
+      <img src="./auth/img/puma22.png" class="rounded-circle">
+    </a>
+    <a href="#">
+      <img src="./auth/img/download.png" class="rounded-circle">
+    </a>
+    <a href="#">
+      <img src="./auth/img/hm.png" class="rounded-circle">
+    </a>
+    <a href="#">
+      <img src="./auth/img/hm.png" class="rounded-circle">
+    </a>
+  </div>
 </div>
 
 
 <!--img-sliding-->
 <div id="ani">
-<div id="carouselExampleInterval" class="carousel slide p-2 mx-2" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-inner rounded-4">
-      <div class="carousel-item active">
-        <img src="./auth/img/img.jpg" class="d-block w-100" alt="...">
+  <div id="carouselExampleInterval" class="carousel slide p-2 mx-2" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-inner rounded-4">
+        <div class="carousel-item active">
+          <img src="./auth/img/img.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./auth/img/bb.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./auth/img/nn.webp" class="d-block w-100" alt="...">
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="./auth/img/bb.webp" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="./auth/img/nn.webp" class="d-block w-100" alt="...">
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-</div>
 </div>
 
 <!--product list name-->
 <div id="ani">
-<div class="d-flex justify-content-between  mt-5 mx-5">
-  <p class="fs-4 d-inline fw-bold">New Arrivel</p>
-  <a href="https://www.youtube.com/watch?v=-FP2Cmc7zj4"
-    <p class="d-niline float-end" style="color: red;">See All</p>
-  </a>
-</div>
+  <div class="d-flex justify-content-between  mt-5 mx-4">
+    <p class="fs-4 d-inline fw-bold">New Arrivel</p>
+    <a href="https://www.youtube.com/watch?v=-FP2Cmc7zj4"
+      <p class="d-niline float-end" style="color: red;">See All</p>
+    </a>
+  </div>
 </div>
 
 <!--product-box-->
 <div id="ani">
-<div class="d-flex flex-row flex-wrap mb-5 justify-content-evenly" style="border: none;">
-  <div class="card">
-    <a href="./product/apparels/">
-      <img src="./auth/img/1.jpeg" class="card-img-top w-100 h-100" alt="...">
-    </a>
-    <div class="card-body">
-      <div class="d-flex flex-row  fw-bold">
-        <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
-        <!-- <div class="p-1">1000</div> -->
+  <div class="d-flex flex-row flex-wrap mb-4 justify-content-evenly">
+    <div class="card border-0">
+      <a href="./product/apparels/">
+        <img src="./auth/img/shopping (2).webp" class="card-img-top w-100 h-100" alt="...">
+      </a>
+      <div class="card-body">
+        <div class="d-flex flex-row  fw-bold">
+          <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+          <!-- <div class="p-1">1000</div> -->
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <a href="path_to_your_target_page_2.html">
-      <img src="./auth/img/shopping (2).webp" class="card-img-top w-100 h-100" alt="...">
-    </a>
-    <div class="card-body">
-      <div class="d-flex flex-row mb-1 fw-bold">
-      <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+    <div class="card  border-0">
+      <a href="path_to_your_target_page_2.html">
+        <img src="./auth/img/shopping (4).webp" class="card-img-top w-100 h-100" alt="...">
+      </a>
+      <div class="card-body">
+        <div class="d-flex flex-row mb-1 fw-bold">
+          <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <a href="path_to_your_target_page_3.html">
-      <img src="./auth/img/1.jpeg" class="card-img-top w-100 h-100" alt="...">
-    </a>
-    <div class="card-body">
-      <div class="d-flex flex-row mb-1 fw-bold">
-      <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+    <div class="card  border-0">
+      <a href="path_to_your_target_page_3.html">
+        <img src="./auth/img/shopping (8).webp" class="card-img-top w-100 h-100" alt="...">
+      </a>
+      <div class="card-body">
+        <div class="d-flex flex-row mb-1 fw-bold">
+          <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <a href="path_to_your_target_page_4.html">
-      <img src="./auth/img/shopping (2).webp" class="card-img-top w-100 h-100" alt="...">
-    </a>
-    <div class="card-body">
-      <div class="d-flex flex-row mb-1 fw-bold">
-      <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+    <div class="card  border-0">
+      <a href="path_to_your_target_page_4.html">
+        <img src="./auth/img/shopping (3).webp" class="card-img-top w-100 h-100" alt="...">
+      </a>
+      <div class="card-body">
+        <div class="d-flex flex-row mb-1 fw-bold">
+          <p class="p-1 flex-grow-1 col-2 text-truncate" style="font-size: 13px;">adidas Originals T shirt <br>₹819</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 
 <!--extra-product1-->
 <div id="ani">
-<div class="d-flex flex-row flex-wrap  mx-3 mb-3 rounded-5" style="background-color: rgb(216, 196, 182);">
-  <div class="container">
-    <h2 class="text-center my-2">Baby Point</h2>
-    <div class="image-container my-4">
-      <img src="./auth/img/baby1.webp" alt="Uploaded Image" class="custom-img">
-      <img src="./auth/img/baby2.webp" alt="Uploaded Image" class="custom-img">
-      <img src="./auth/img/baby1.webp" alt="Uploaded Image" class="custom-img">
-      <img src="./auth/img/1.jpeg" alt="Uploaded Image" class="custom-img">
-      <img src="./auth/img/shopping.webp" alt="Uploaded Image" class="custom-img">
-      <img src="./auth/img/shopping (3).webp" alt="Uploaded Image" class="custom-img">
+  <div class="d-flex flex-row flex-wrap  mx-3 mb-3 rounded-5" style="background-color: rgb(216, 196, 182);">
+    <div class="container">
+      <h2 class="text-center my-2">Baby Point</h2>
+      <div class="image-container my-4">
+        <img src="./auth/img/baby1.webp" alt="Uploaded Image" class="custom-img">
+        <img src="./auth/img/baby2.webp" alt="Uploaded Image" class="custom-img">
+        <img src="./auth/img/baby1.webp" alt="Uploaded Image" class="custom-img">
+        <img src="./auth/img/1.jpeg" alt="Uploaded Image" class="custom-img">
+        <img src="./auth/img/shopping.webp" alt="Uploaded Image" class="custom-img">
+        <img src="./auth/img/shopping (3).webp" alt="Uploaded Image" class="custom-img">
 
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <!--extra-product-more-->
 <div id="ani">
-<div class="container">
-  <h2 class="text-center my-4">More offer on T-shirt</h2>
-  <div class="image-container-1 my-4">
-    <img src="./auth/img/shopping.webp" alt="" class="custom-img1">
-    <img src="./auth/img/shopping (2).webp" alt="" class="custom-img1">
-    <img src="./auth/img/shopping (4).webp" alt="" class="custom-img1">
-    <img src="./auth/img/shopping (3).webp" alt="" class="custom-img1">
-    <img src="./auth/img/shopping (4).webp" alt="" class="custom-img1">
-    <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
-    <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
-    <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
+  <div class="container">
+    <h2 class="text-center my-4">More offer on T-shirt</h2>
+    <div class="image-container-1 my-4">
+      <img src="./auth/img/shopping.webp" alt="" class="custom-img1">
+      <img src="./auth/img/shopping (2).webp" alt="" class="custom-img1">
+      <img src="./auth/img/shopping (4).webp" alt="" class="custom-img1">
+      <img src="./auth/img/shopping (3).webp" alt="" class="custom-img1">
+      <img src="./auth/img/shopping (4).webp" alt="" class="custom-img1">
+      <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
+      <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
+      <img src="./auth/img/1.jpeg" alt="" class="custom-img1">
+    </div>
   </div>
-</div>
 </div>
 
 
@@ -409,18 +434,18 @@ include "includes/nav.php";
   <h4 class="fw-bolder">OFFER</h4>
 </div>
 <div class="slider mt-1 my-5" style="--width:100px; --height:50px; --quantity:10;">
-<div class="list">
-  <div class="items" style="--position: 1;"><img src="./auth/img/100.png" alt=""></div>
-  <div class="items"  style="--position: 2;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
-  <div class="items"  style="--position: 3;"><img src="./auth/img/100.png" alt=""></div>
-  <div class="items"  style="--position: 4;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
-  <div class="items"  style="--position: 5;"><img src="./auth/img/100.png" alt=""></div>
-  <div class="items"  style="--position: 6;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
-  <div class="items"  style="--position: 7;"><img src="./auth/img/100.png" alt=""></div>
-  <div class="items"  style="--position: 8;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
-  <div class="items"  style="--position: 9;"><img src="./auth/img/100.png" alt=""></div>
-  <div class="items"  style="--position: 10;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
-</div>
+  <div class="list">
+    <div class="items" style="--position: 1;"><img src="./auth/img/100.png" alt=""></div>
+    <div class="items" style="--position: 2;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+    <div class="items" style="--position: 3;"><img src="./auth/img/100.png" alt=""></div>
+    <div class="items" style="--position: 4;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+    <div class="items" style="--position: 5;"><img src="./auth/img/100.png" alt=""></div>
+    <div class="items" style="--position: 6;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+    <div class="items" style="--position: 7;"><img src="./auth/img/100.png" alt=""></div>
+    <div class="items" style="--position: 8;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+    <div class="items" style="--position: 9;"><img src="./auth/img/100.png" alt=""></div>
+    <div class="items" style="--position: 10;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>
+  </div>
 </div>
 
 

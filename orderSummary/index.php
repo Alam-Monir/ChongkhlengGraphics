@@ -26,7 +26,7 @@ include "./../includes/header.php";
     <div class="d-flex align-items-center justify-content-between px-3 py-2" style="background-color: rgb(235, 235, 235);">
 
       <!-- Back Button -->
-      <a href="../index.php" class="btn p-0">
+      <a href="./../product/apparels/men/productPage/" class="btn p-0">
         <i class="bi bi-chevron-left fs-4 text-dark"></i>
       </a>
 
@@ -75,8 +75,6 @@ include "./../includes/header.php";
 
 </div>
 
-<!-- page name -->
-<div class="d-flex fw-bold mt-4" style="margin-left: 20px;"> .My Cart </div>
 
 <!-- order summary page -->
 <div class=" d-flex flex-row mt-3">
@@ -173,10 +171,10 @@ include "./../includes/header.php";
 <!-- buy button -->
 <div class="d-flex justify-content-around flex-row mt-5 mb-2 button">
   <div class="align-items-center">
-    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color: #D8C4B6;" href="#" role="button">Add To Cart</a>
+    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color: #D8C4B6;">Price : 577</a>
   </div>
   <div class="align-items-center">
-    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color :#F5EFE7;" href="../orderSummary/cart/" role="button">Continue</a>
+    <a class="btn btn-secondary custom-btn fw-bolder" style="background-color :#F5EFE7;" href="" role="button">Continue</a>
   </div>
 </div>
 

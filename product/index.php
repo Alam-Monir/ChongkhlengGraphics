@@ -18,18 +18,18 @@ include "../includes/header.php";
     object-fit: cover;
   }
 
-  .product-item {
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
+  .d-flex .product-item {
+  position: relative;
+  display: block;
+  text-align: center;  
+  transition: all 0.3s ease; 
+}
 
-  .product-item:hover {
-    transform: scale(1.05);
-  }
 
-  .product-item img {
-    transition: transform 0.3s ease;
-  }
+.d-flex .product-item:hover img {
+  transform: scale(1.1);  
+  transition: transform 0.3s ease-in-out;
+}
 
   @media (max-width: 991px) {
     .rounded {
@@ -124,13 +124,10 @@ include "../includes/header.php";
     <h4 class="text-center fs-6">Print Cup</h4>
   </a>
   <a href="" class="product-item">
-    <img src="../auth/img/shopping.webp" class="rounded" alt="Shopping Image">
-    <h4 class="text-center fs-6">Extra Product</h4>
+    <img src="../auth/img/shopping20.webp" class="rounded" alt="Shopping Image">
+    <h4 class="text-center fs-6">Print bottel</h4>
   </a>
-  <a href="" class="product-item">
-    <img src="../auth/img/shopping.webp" class="rounded" alt="Shopping Image">
-    <h4 class="text-center fs-6">Extra Product</h4>
-  </a>
+
 </div>
 
 

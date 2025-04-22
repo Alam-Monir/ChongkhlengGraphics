@@ -115,7 +115,7 @@ include "../../../includes/header.php";
     </div>
     <div class="carousel-inner" style="height: 300px;">
       <div class="carousel-item active">
-        <img src="../../../auth/img/bb.webp" class="d-block w-100" alt="..." style="height: 300px; object-fit: cover; object-position: center;">
+        <img src="../../../auth/img/cc.webp" class="d-block w-100" alt="..." style="height: 300px; object-fit: cover; object-position: center;">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Some representative placeholder content for the first slide.</p>
@@ -129,7 +129,7 @@ include "../../../includes/header.php";
         </div>
       </div>
       <div class="carousel-item">
-        <img src="../../../auth/img/bb.webp" class="d-block w-100" alt="..." style="height: 300px; object-fit: cover; object-position: center;">
+        <img src="../../../auth/img/img.jpg" class="d-block w-100" alt="..." style="height: 300px; object-fit: cover; object-position: center;">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>
