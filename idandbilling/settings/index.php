@@ -1,9 +1,9 @@
 <?php
 $title = 'Settings';
 include("../../includes/header.php");
+include('../auth/auth_check_admin.php');
 include("includes/nav.php");
 include("../config/dbcon.php");
-include('../auth/auth_check_admin.php');
 
 try {
   // Fetch admin details
@@ -22,14 +22,6 @@ try {
 } catch (PDOException $e) {
   die("Database error: " . $e->getMessage());
 }
-
-// Query to fetch users where isAdmin = 0
-// $sql = "SELECT * FROM users WHERE isAdmin = 0";
-// $stmt = $pdo->prepare($sql);
-// $stmt->execute();
-
-// Fetch all users
-// $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!-- Password Change Modal -->
@@ -68,9 +60,9 @@ try {
 <div class="modal fade" id="deleteUserModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <form id="deleteFormModal" action="" method="POST">
-      <input type="hidden" name="action" value="delete">
-      <input type="hidden" name="userId" id="deleteUserId" value="">
+      <form id="deleteFormModal" action="delete_user.php" method="POST">
+        <input type="hidden" name="action" value="delete">
+        <input type="hidden" name="userId" id="deleteUserId" value="">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete User ?</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -87,8 +79,10 @@ try {
   </div>
 </div>
 
-<!-- left-box -->
+
 <div class="row">
+
+  <!-- left-box -->
   <div class="col-sm-6 mb-3 mb-sm-0 w-25">
     <div class="card h-100">
       <h5 class="px-3 pt-4 fs-4">Admin Details</h5>
@@ -130,7 +124,6 @@ try {
   </div>
 
   <!-- Right Div Box -->
-
   <div class="col-sm-6 w-75">
     <div class="card">
       <h5 class="fs-4 px-4 pt-4" id="exampleModalLabel">Staff List</h5>
@@ -275,7 +268,6 @@ try {
       button.addEventListener('click', function() {
         const usersName = button.getAttribute('data-user-name');
         const usersId = button.getAttribute('data-user-id');
-        // console.log(usersId)
         document.getElementById('deleteUserId').value = usersId;
         document.getElementById('userToDelete').textContent = usersName;
       });
