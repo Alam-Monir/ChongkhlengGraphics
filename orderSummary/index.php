@@ -31,8 +31,8 @@ include "./../includes/header.php";
       </a>
 
       <!-- Brand Name -->
-      <a href="/chongkhlenggraphics/" class="fw-bold ms-2 me-auto text-dark text-decoration-none">
-        CG STORE
+      <a href="" class="fw-bold ms-2 me-auto text-dark text-decoration-none">
+      Order Summary
       </a>
 
       <!-- Desktop Search -->
@@ -54,7 +54,7 @@ include "./../includes/header.php";
         <a class="text-dark" data-bs-toggle="collapse" href="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
           <i class="bi bi-search fs-6"></i>
         </a>
-        <a href="/chongkhlenggraphics/">
+        <a href="./cart/">
         <i class="bi bi-bag-check ms-3 fs-6"></i>
         </a>
       </div>

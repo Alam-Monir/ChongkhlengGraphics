@@ -191,7 +191,7 @@ include "./../../../../includes/header.php";
       <a class="btn mt-1 my-3 rounded-3 fw-bolder d-flex justify-content-center align-items-center"
         style="height: 60px; width:190px; background-color: rgb(235, 235, 235);"
         href="./../../../../orderSummary/cart/" role="button">
-        <i class="bi bi-cart-check-fill mx-2"></i> Add to Cart
+        Add to Cart
       </a>
 
       <a class="btn mt-1 my-3 rounded-3 fw-bolder d-flex justify-content-center align-items-center"

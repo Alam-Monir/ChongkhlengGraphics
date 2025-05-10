@@ -433,7 +433,7 @@ include "includes/nav.php";
 <div class="d-flex justify-content-center mt-5">
   <h4 class="fw-bolder">OFFER</h4>
 </div>
-<div class="slider mt-1 my-5" style="--width:100px; --height:50px; --quantity:10;">
+<div class="slider mt-1 my-5" style="--width:60px; --height:50px; --quantity:10;">
   <div class="list">
     <div class="items" style="--position: 1;"><img src="./auth/img/100.png" alt=""></div>
     <div class="items" style="--position: 2;"><img src="./auth/img/christmas-text-png-2 (1).png" alt=""></div>

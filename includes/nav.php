@@ -12,7 +12,7 @@
 
     <!-- Brand on desktop -->
     <a class="navbar-brand d-none d-lg-block p-3" href="#">
-      <h2 class="fw-bold d-inline-block align-text-top">CG STORE</h2>
+      <h3 class="fw-bold d-inline-block align-text-top">CG STORE</h3>
     </a>
 
     <!-- Only show on mobile -->

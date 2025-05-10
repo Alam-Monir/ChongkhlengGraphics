@@ -37,6 +37,9 @@ include "../../includes/header.php";
       height: 150px;
       object-fit: cover;
     }
+    .small-heading {
+  font-size: 0.8rem;
+}
   }
 </style>
 
@@ -97,7 +100,7 @@ include "../../includes/header.php";
 </div>
 
 <!-- Search Bar -->
-<div class="collapse w-100" id="searchNav">
+<div class="collapse w-100" id="searchNav"> 
   <form class="w-100">
     <div class="input-group p-3 mt-3 bg-white">
       <!-- Back Icon -->
@@ -120,13 +123,13 @@ include "../../includes/header.php";
   <div class="col-4 col-lg-2 text-center mb-4">
     <a href="./men/" class="d-block">
       <img src="../../auth/img/shopping (1).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
-      <h4 class="text-start text-truncate small w-75 mx-auto">Mens top Wear</h4>
+      <h4 class="text-start text-truncate small w-1 mx-auto">Mens top Wear</h4>
     </a>
   </div>
   <div class="col-4 col-lg-2 text-center mb-4">
     <a href="./women/" class="d-block">
       <img src="../../auth/img/shopping (8).webp" class="img-fluid rounded mb-2" alt="Shopping Image">
-      <h4 class="text-start text-truncate small w-75 mx-auto">Womens Top Wear</h4>
+      <h4 class="text-start text-truncate small w-5 mx-auto">Womens Top Wear</h4>
     </a>
   </div>
   <div class="col-4 col-lg-2 text-center mb-4">
